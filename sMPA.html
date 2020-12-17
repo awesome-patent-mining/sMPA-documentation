@@ -1,0 +1,1863 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>sMPA package &mdash; sMPA 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'1.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to sMPA’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> sMPA
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">sMPA package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-sMPA.pajekUtil">sMPA.pajekUtil module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-sMPA.pathTopic">sMPA.pathTopic module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-sMPA.queue_set">sMPA.queue_set module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-sMPA.semanticRoadMap">sMPA.semanticRoadMap module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-sMPA.xgmml">sMPA.xgmml module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-sMPA">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">sMPA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>sMPA package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/sMPA.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="smpa-package">
+<h1>sMPA package<a class="headerlink" href="#smpa-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-sMPA.pajekUtil">
+<span id="smpa-pajekutil-module"></span><h2>sMPA.pajekUtil module<a class="headerlink" href="#module-sMPA.pajekUtil" title="Permalink to this headline">¶</a></h2>
+<p>This code provides a series of basic functions to create pajek-style files, such as. net,. clu.</p>
+<dl class="class">
+<dt id="sMPA.pajekUtil.PajekUtil">
+<em class="property">class </em><code class="descclassname">sMPA.pajekUtil.</code><code class="descname">PajekUtil</code><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="method">
+<dt id="sMPA.pajekUtil.PajekUtil.addPartition2Graph">
+<code class="descname">addPartition2Graph</code><span class="sig-paren">(</span><em>g</em>, <em>partition</em>, <em>partition_name</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.addPartition2Graph" title="Permalink to this definition">¶</a></dt>
+<dd><p>add paritition information to DiGraph</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>g</strong> (<em>DiGraph</em>) – </li>
+<li><strong>partition</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em></a>) – list</li>
+<li><strong>partition_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – String</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">DiGraph</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.pajekUtil.PajekUtil.combine_multisubGraph">
+<code class="descname">combine_multisubGraph</code><span class="sig-paren">(</span><em>sub_graphs</em>, <em>g</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.combine_multisubGraph" title="Permalink to this definition">¶</a></dt>
+<dd><p>combine a list of [[0.56,[subgraph1,subgraph2],[0.55,[subgraph3,subgraph4]]] into a DiGraph object</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>sub_graphs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em></a>) – [[0.56,[subgraph1,subgraph2],[0.55,[subgraph3,subgraph4]]]</li>
+<li><strong>g</strong> (<em>DiGraph</em>) – DiGraph</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">DiGraph</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.pajekUtil.PajekUtil.combine_subGraph">
+<code class="descname">combine_subGraph</code><span class="sig-paren">(</span><em>sub_graphs</em>, <em>g</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.combine_subGraph" title="Permalink to this definition">¶</a></dt>
+<dd><p>combine a list of sub_graphs into one DiGraph object</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>sub_graphs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em></a>) – list</li>
+<li><strong>g</strong> (<em>DiGraph</em>) – DiGraph</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">DiGraph</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.pajekUtil.PajekUtil.combine_subGraphArray">
+<code class="descname">combine_subGraphArray</code><span class="sig-paren">(</span><em>sub_graphs</em>, <em>g</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.combine_subGraphArray" title="Permalink to this definition">¶</a></dt>
+<dd><p>combine a list of sub_graphs into one DiGraph object</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>sub_graphs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em></a>) – [sub_graph1,sub_graph2,……]</li>
+<li><strong>g</strong> (<em>DiGraph</em>) – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.pajekUtil.PajekUtil.convertPajek2Cytoscape">
+<code class="descname">convertPajek2Cytoscape</code><span class="sig-paren">(</span><em>pajek_net</em>, <em>pajek_par</em>, <em>cyto_csv</em>, <em>cyto_node</em>, <em>cyto_edge</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.convertPajek2Cytoscape" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert pajek file to cytoscape file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>pajek_net</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – path of net file</li>
+<li><strong>pajek_par</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – path of partition file</li>
+<li><strong>cyto_csv</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – file path to write graph information</li>
+<li><strong>cyto_node</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – file path to write node information</li>
+<li><strong>cyto_edge</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – file path to write edge information</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.pajekUtil.PajekUtil.createNetFromFile">
+<code class="descname">createNetFromFile</code><span class="sig-paren">(</span><em>filePath</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.createNetFromFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>create networkx DiGraph g from a txt file with sourcenode,endnode in each line</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>filePath</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – absolute path of txt file</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">DiGraph</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.pajekUtil.PajekUtil.createNetFromList">
+<code class="descname">createNetFromList</code><span class="sig-paren">(</span><em>pair_array</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.createNetFromList" title="Permalink to this definition">¶</a></dt>
+<dd><p>create networkx DiGraph g from a list with [sourcenode,endnode] in each element</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>pair_array</strong> (<em>param</em>) – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">DiGraph</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.pajekUtil.PajekUtil.createNetFromMatrixWithWeight">
+<code class="descname">createNetFromMatrixWithWeight</code><span class="sig-paren">(</span><em>cooccur_array</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.createNetFromMatrixWithWeight" title="Permalink to this definition">¶</a></dt>
+<dd><p>create networkx DiGraph g from a 2-D numpy array which indicates its adjacency matrix</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cooccur_array</strong> (<em>np.array</em>) – 2-D numpy array</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">each node has two attributions, namely,{‘label’:str,’weight’:float}</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">DiGraph</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.pajekUtil.PajekUtil.createNetFromPairWithWeight">
+<code class="descname">createNetFromPairWithWeight</code><span class="sig-paren">(</span><em>filePath</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.createNetFromPairWithWeight" title="Permalink to this definition">¶</a></dt>
+<dd><p>create networkx DiGraph g from a txt file with sourcenode,endnode,weight in each line</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>filePath</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – absolute path of txt file</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">DiGraph</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.pajekUtil.PajekUtil.createNetWithRelTypeFromList">
+<code class="descname">createNetWithRelTypeFromList</code><span class="sig-paren">(</span><em>triple_array</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.createNetWithRelTypeFromList" title="Permalink to this definition">¶</a></dt>
+<dd><p>create networkx DiGraph g from a list, notice that reltype is int type</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>triple_array</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em></a>) – with [sourcenode,endnode,arctype] in each element</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">DiGraph</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.pajekUtil.PajekUtil.createPartition4EntityTypeFromList">
+<code class="descname">createPartition4EntityTypeFromList</code><span class="sig-paren">(</span><em>g</em>, <em>entityType_list</em>, <em>filePath</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.createPartition4EntityTypeFromList" title="Permalink to this definition">¶</a></dt>
+<dd><p>create partition file from a list containing entity type of each node.
+notice:len(entitytype_list) maybe larger than len(g.nodes()), since DiGraph g is only the independent component
+of origial network while entitytype_list contains the entity types of all nodes from original network</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>g</strong> (<em>DiGraph</em>) – </li>
+<li><strong>entityType_list</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em></a>) – entityType_list format [entity,type] and type is Integer</li>
+<li><strong>filePath</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – absolute path of output file</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.pajekUtil.PajekUtil.createPartitionByLabelsListFile">
+<code class="descname">createPartitionByLabelsListFile</code><span class="sig-paren">(</span><em>g</em>, <em>clu_input</em>, <em>clu_output</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.createPartitionByLabelsListFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a txt file containing a list of patentNo, create corresponding partition file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>g</strong> (<em>DiGraph</em>) – an instance of DiGraph object</li>
+<li><strong>clu_input</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – path of a txt file with each line in ‘patentNo,…’ format</li>
+<li><strong>clu_output</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – path of a clu file for pajek to read the partition information</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.pajekUtil.PajekUtil.createPartitionByList">
+<code class="descname">createPartitionByList</code><span class="sig-paren">(</span><em>g</em>, <em>clu</em>, <em>fileAddr</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.createPartitionByList" title="Permalink to this definition">¶</a></dt>
+<dd><p>create partition file given partition info contained in clu</p>
+<dl class="docutils">
+<dt>Args</dt>
+<dd>g(DiGraph): DiGraph
+clu(list): list
+fileAddr(str): absolute path</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.pajekUtil.PajekUtil.createPartitionByNetFile">
+<code class="descname">createPartitionByNetFile</code><span class="sig-paren">(</span><em>graphFile</em>, <em>subgraphFile</em>, <em>partitionFile</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.createPartitionByNetFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a graph and a subgraph,create a partition file to label the nodes of subgraph from graph parent</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>graphFile</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – path of a pajek net file</li>
+<li><strong>subgraphFile</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – path of a pajek net file</li>
+<li><strong>partitionFile</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – path of output file</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.pajekUtil.PajekUtil.getGraphFromPajeknet">
+<code class="descname">getGraphFromPajeknet</code><span class="sig-paren">(</span><em>netAddress</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.getGraphFromPajeknet" title="Permalink to this definition">¶</a></dt>
+<dd><p>load a pajek net file into  an DiGraph object</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>netAddress</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – path of pajek net file</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">DiGraph</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.pajekUtil.PajekUtil.getMaxWeightArcFromSrc">
+<code class="descname">getMaxWeightArcFromSrc</code><span class="sig-paren">(</span><em>graph</em>, <em>src</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.getMaxWeightArcFromSrc" title="Permalink to this definition">¶</a></dt>
+<dd><p>get max weighted arc given a source node</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>graph</strong> (<em>DiGraph</em>) – DiGraph</li>
+<li><strong>src</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – source node id</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">[weight, end_node_list],all nodes in end_node_list with equal weight on the arc to source node</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)">list</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.pajekUtil.PajekUtil.getMaxWeightPathBySingleNode">
+<code class="descname">getMaxWeightPathBySingleNode</code><span class="sig-paren">(</span><em>nodeID</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.getMaxWeightPathBySingleNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>debugged by Liang Chen on 20201129,
+search global main path in self.g given a source node</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>nodeID</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – ID of source node</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">a list with two element [weight of resulted path, an instance of DiGraph representing the resulted path]</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)">list</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.pajekUtil.PajekUtil.getMaxWeightPathBySingleNode_Graph">
+<code class="descname">getMaxWeightPathBySingleNode_Graph</code><span class="sig-paren">(</span><em>nodeID</em>, <em>g</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.getMaxWeightPathBySingleNode_Graph" title="Permalink to this definition">¶</a></dt>
+<dd><p>search global main path in a graph given a source node</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>nodeID</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – ID of source node</li>
+<li><strong>g</strong> (<em>DiGraph</em>) – Graph</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><p>a list with two element</p>
+<blockquote>
+<div><p>[weight of resulted path, an instance of DiGraph representing the resulted path]</p>
+</div></blockquote>
+</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)">list</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.pajekUtil.PajekUtil.getSourceNodes">
+<code class="descname">getSourceNodes</code><span class="sig-paren">(</span><em>graph</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.getSourceNodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>get source node list from a directed graph</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>graph</strong> (<em>DiGraph</em>) – DiGraph</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.pajekUtil.PajekUtil.getSubGraphByOneSource">
+<code class="descname">getSubGraphByOneSource</code><span class="sig-paren">(</span><em>graph</em>, <em>sourceNode</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.getSubGraphByOneSource" title="Permalink to this definition">¶</a></dt>
+<dd><p>return a subgraph constituted by successors of a given source node</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>graph</strong> (<em>DiGraph</em>) – DiGraph</li>
+<li><strong>sourceNode</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – source node ID</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">DiGraph</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.pajekUtil.PajekUtil.getmulti_MaxWeightPathBySingleNode_Graph">
+<code class="descname">getmulti_MaxWeightPathBySingleNode_Graph</code><span class="sig-paren">(</span><em>nodeID</em>, <em>g</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.getmulti_MaxWeightPathBySingleNode_Graph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a source node, if there exists multiple maxWeight paths in Graph g,find them all</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>nodeID</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – </li>
+<li><strong>g</strong> (<em>DiGraph</em>) – DiGraph</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">a list in format like [4.200226000000001, [graph1,graph2,……]]</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)">list</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.pajekUtil.PajekUtil.getmulti_MaxWeightPathBySingleNode_Graph_newSumMethod">
+<code class="descname">getmulti_MaxWeightPathBySingleNode_Graph_newSumMethod</code><span class="sig-paren">(</span><em>nodeID</em>, <em>g</em>, <em>patentNos</em>, <em>sim_matrix</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.getmulti_MaxWeightPathBySingleNode_Graph_newSumMethod" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search the max weight path from a Graph give source node nodeID, notice that edge weight is measured by textual similarity and stored in sim_matrix, in addition newSumMethod refers to internode_sum_distance()</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>nodeID</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – source node</li>
+<li><strong>g</strong> (<em>DiGraph</em>) – </li>
+<li><strong>patentNos</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em></a>) – list of patent NO.</li>
+<li><strong>sim_matrix</strong> (<em>np.array</em>) – matrix of text similarity</li>
+<li><strong>semantic_weight</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a>) – weight of textual similarity between nodes</li>
+<li><strong>topology_weight</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a>) – weight of topological value between nodes, such as SPC,SPNC</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">a list in format like [4.200226000000001, [graph1,graph2,……]]</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)">list</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.pajekUtil.PajekUtil.getmulti_MaxWeightPathBySingleNode_Graph_newSumMethod_textSim_topology">
+<code class="descname">getmulti_MaxWeightPathBySingleNode_Graph_newSumMethod_textSim_topology</code><span class="sig-paren">(</span><em>nodeID</em>, <em>g</em>, <em>patentNos</em>, <em>sim_matrix</em>, <em>semantic_weight=1.0</em>, <em>topology_weight=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.getmulti_MaxWeightPathBySingleNode_Graph_newSumMethod_textSim_topology" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search the max weight path from a Graph give source node nodeID, notice the edge weight is calculated by semantic_sim*semantic_weight+topology*topology_weight_sim
+,notice newSumMethod refers to internode_sum_distance()</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>nodeID</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – source node</li>
+<li><strong>g</strong> (<em>DiGraph</em>) – </li>
+<li><strong>patentNos</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em></a>) – list of patent NO.</li>
+<li><strong>sim_matrix</strong> (<em>np.array</em>) – matrix of text similarity</li>
+<li><strong>semantic_weight</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a>) – weight of textual similarity between nodes</li>
+<li><strong>topology_weight</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a>) – weight of topological value between nodes, such as SPC,SPNC</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">a list in format like [4.200226000000001, [graph1,graph2,……]]</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)">list</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.pajekUtil.PajekUtil.globalMainPath">
+<code class="descname">globalMainPath</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.globalMainPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>search a list of max weighted paths given all source nodes</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">a list of max weighted paths given all source nodes</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)">list</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.pajekUtil.PajekUtil.internode_sum_distance">
+<code class="descname">internode_sum_distance</code><span class="sig-paren">(</span><em>sources</em>, <em>target</em>, <em>sim_matrix</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.internode_sum_distance" title="Permalink to this definition">¶</a></dt>
+<dd><p>calculate the weight between source nodes to target node by sum up the edge weight of target node to all source nodes</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>sources</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em></a>) – source node IDs</li>
+<li><strong>target</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – target node ID</li>
+<li><strong>sim_matrix</strong> (<em>np.array</em>) – textual similarities between all nodes</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">result weight</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.pajekUtil.PajekUtil.loadNetworkFromPajeknet">
+<code class="descname">loadNetworkFromPajeknet</code><span class="sig-paren">(</span><em>netAddress</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.loadNetworkFromPajeknet" title="Permalink to this definition">¶</a></dt>
+<dd><p>load a pajek net file into self.g as an DiGraph object</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>netAddress</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – absolute path of pajek net file</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.pajekUtil.PajekUtil.loadNetworkFromPajeknetWithMultipleRelType">
+<code class="descname">loadNetworkFromPajeknetWithMultipleRelType</code><span class="sig-paren">(</span><em>netAddress</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.loadNetworkFromPajeknetWithMultipleRelType" title="Permalink to this definition">¶</a></dt>
+<dd><p>load pajek net file with multi-type edges into an DiGraph object</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>netAddress</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – path of pajek net file</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">DiGraph</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.pajekUtil.PajekUtil.loadNetworkFromPajeknet_edges">
+<code class="descname">loadNetworkFromPajeknet_edges</code><span class="sig-paren">(</span><em>netAddress</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.loadNetworkFromPajeknet_edges" title="Permalink to this definition">¶</a></dt>
+<dd><p>load graph into self.g from net file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>netAddress</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – absolute path of net file</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.pajekUtil.PajekUtil.loadPartitionFromClu">
+<code class="descname">loadPartitionFromClu</code><span class="sig-paren">(</span><em>netAddress</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.loadPartitionFromClu" title="Permalink to this definition">¶</a></dt>
+<dd><p>load partition info from clu file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>netAddress</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – absolute path of clu file</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">a list of partition info</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)">list</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.pajekUtil.PajekUtil.localMainPath">
+<code class="descname">localMainPath</code><span class="sig-paren">(</span><em>graph</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.localMainPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>get local main path from graph</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>graph</strong> (<em>DiGraph</em>) – DiGraph</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">local main path as an instance of DiGraph</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">DiGraph</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.pajekUtil.PajekUtil.localMainPathFromOneSource">
+<code class="descname">localMainPathFromOneSource</code><span class="sig-paren">(</span><em>graph</em>, <em>i</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.localMainPathFromOneSource" title="Permalink to this definition">¶</a></dt>
+<dd><p>return local main path give a source node</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>graph</strong> (<em>DiGraph</em>) – DiGraph</li>
+<li><strong>i</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – source node ID</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">DiGraph</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.pajekUtil.PajekUtil.multiSourcePath">
+<code class="descname">multiSourcePath</code><span class="sig-paren">(</span><em>g</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.multiSourcePath" title="Permalink to this definition">¶</a></dt>
+<dd><p>return a DiGraph constituted by local main paths induced by all source nodes</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>g</strong> (<em>DiGraph</em>) – DiGraph</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">DiGraph</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.pajekUtil.PajekUtil.multi_sources_globalMainPath_return_DiGraph">
+<code class="descname">multi_sources_globalMainPath_return_DiGraph</code><span class="sig-paren">(</span><em>g</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.multi_sources_globalMainPath_return_DiGraph" title="Permalink to this definition">¶</a></dt>
+<dd><p>search a list of max weighted paths given all source nodes and merge them into a DiGraph</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>g</strong> (<em>DiGraph</em>) – DiGraph</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">DiGraph</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.pajekUtil.PajekUtil.multi_sources_globalMainPath_return_list">
+<code class="descname">multi_sources_globalMainPath_return_list</code><span class="sig-paren">(</span><em>g</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.multi_sources_globalMainPath_return_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>search a list of max weighted paths given all source nodes</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>g</strong> (<em>DiGraph</em>) – DiGraph</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list containing main paths from all source nodes</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)">list</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.pajekUtil.PajekUtil.sort_subGraph">
+<code class="descname">sort_subGraph</code><span class="sig-paren">(</span><em>sub_graphs</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.sort_subGraph" title="Permalink to this definition">¶</a></dt>
+<dd><p>sort a list of subGraphs by graph weight</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>sub_graphs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em></a>) – [sub_graph1,sub_graph2,sub_graph3,…….]</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">[[weight_sum_sub1,sub_graph_1],[weight_sum_sub2,sub_graph_2],…]</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)">list</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.pajekUtil.PajekUtil.writeEdgeAttOfCytoscape2file">
+<code class="descname">writeEdgeAttOfCytoscape2file</code><span class="sig-paren">(</span><em>g</em>, <em>filePath</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.writeEdgeAttOfCytoscape2file" title="Permalink to this definition">¶</a></dt>
+<dd><p>write attribution of edges in DiGraph in cytoscape file format</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>g</strong> (<em>DiGraph</em>) – </li>
+<li><strong>filePath</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – absolute path</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.pajekUtil.PajekUtil.writeGraph2CytoscapeCSV">
+<code class="descname">writeGraph2CytoscapeCSV</code><span class="sig-paren">(</span><em>g</em>, <em>filePath</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.writeGraph2CytoscapeCSV" title="Permalink to this definition">¶</a></dt>
+<dd><p>write DiGraph in cytoscape supported CSV format</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>g</strong> (<em>DiGraph</em>) – </li>
+<li><strong>filePath</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – absolute path</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.pajekUtil.PajekUtil.writeGraph2CytoscapeXGMML">
+<code class="descname">writeGraph2CytoscapeXGMML</code><span class="sig-paren">(</span><em>g</em>, <em>filePath</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.writeGraph2CytoscapeXGMML" title="Permalink to this definition">¶</a></dt>
+<dd><p>output DiGraph in cytoscape format</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>g</strong> (<em>DiGraph</em>) – </li>
+<li><strong>filePath</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – absolute path</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.pajekUtil.PajekUtil.writeGraph2pajekNetFile">
+<code class="descname">writeGraph2pajekNetFile</code><span class="sig-paren">(</span><em>g</em>, <em>filePath</em>, <em>networkType='Arcs'</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.writeGraph2pajekNetFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is added on 20191007 by Liang Chen</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>g</strong> (<em>DiGraph</em>) – </li>
+<li><strong>filePath</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – absolute path</li>
+<li><strong>networkType</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – {‘Arcs’,’Edges’}, indicate whether the output network is directed or not,networkType</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.pajekUtil.PajekUtil.writeLabel_par_map_2_txt">
+<code class="descname">writeLabel_par_map_2_txt</code><span class="sig-paren">(</span><em>g</em>, <em>clu</em>, <em>fileAddre</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.writeLabel_par_map_2_txt" title="Permalink to this definition">¶</a></dt>
+<dd><p>create node_label-partition map,and write to a file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>g</strong> (<em>DiGraph</em>) – DiGraph</li>
+<li><strong>clu</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em></a>) – list</li>
+<li><strong>fileAddre</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.pajekUtil.PajekUtil.writeNodeAttOfCytoscape2file">
+<code class="descname">writeNodeAttOfCytoscape2file</code><span class="sig-paren">(</span><em>g</em>, <em>filePath</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.writeNodeAttOfCytoscape2file" title="Permalink to this definition">¶</a></dt>
+<dd><p>write attribution of nodes in DiGraph in cytoscape file format</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>g</strong> (<em>DiGraph</em>) – </li>
+<li><strong>filePath</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – absolute path</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-sMPA.pathTopic">
+<span id="smpa-pathtopic-module"></span><h2>sMPA.pathTopic module<a class="headerlink" href="#module-sMPA.pathTopic" title="Permalink to this headline">¶</a></h2>
+<p>This code provides a series of basic functions for topic analysis of main path</p>
+<dl class="class">
+<dt id="sMPA.pathTopic.PathTopic">
+<em class="property">class </em><code class="descclassname">sMPA.pathTopic.</code><code class="descname">PathTopic</code><span class="sig-paren">(</span><em>texts_serialAddress</em>, <em>pns_serialAddress</em>, <em>lsi_serializationAddress</em>, <em>dictionary_serialAddress</em>, <em>topic_num=10</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pathTopic.PathTopic" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="sMPA.pathTopic.PathTopic.generatePathTopic">
+<code class="descname">generatePathTopic</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pathTopic.PathTopic.generatePathTopic" title="Permalink to this definition">¶</a></dt>
+<dd><p>return semantic topic representation of a path</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> (<em>DiGraph</em>) – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">1D np array</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">np.array</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.pathTopic.PathTopic.normalize">
+<code class="descname">normalize</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pathTopic.PathTopic.normalize" title="Permalink to this definition">¶</a></dt>
+<dd><p>return normalized vector</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>v</strong> (<em>np.array</em>) – vector</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">normalized vector</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">np.array</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.pathTopic.PathTopic.transformCorpusLsi2Numpy">
+<code class="descname">transformCorpusLsi2Numpy</code><span class="sig-paren">(</span><em>corpus_index</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pathTopic.PathTopic.transformCorpusLsi2Numpy" title="Permalink to this definition">¶</a></dt>
+<dd><p>transform corpus to numpy array format</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>corpus_index</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em></a>) – [dictionary.doc2bow(text) for text in texts]</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">np.array([corpus_index.__len__(),self.topic_number])</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">np.array</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-sMPA.queue_set">
+<span id="smpa-queue-set-module"></span><h2>sMPA.queue_set module<a class="headerlink" href="#module-sMPA.queue_set" title="Permalink to this headline">¶</a></h2>
+<p>This code provides a series of utilities for queue operation</p>
+<dl class="class">
+<dt id="sMPA.queue_set.Queue_Set">
+<em class="property">class </em><code class="descclassname">sMPA.queue_set.</code><code class="descname">Queue_Set</code><a class="headerlink" href="#sMPA.queue_set.Queue_Set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="method">
+<dt id="sMPA.queue_set.Queue_Set.get">
+<code class="descname">get</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.queue_set.Queue_Set.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>pop an element from the queue</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">an element of any type</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">elment</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.queue_set.Queue_Set.getSize">
+<code class="descname">getSize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.queue_set.Queue_Set.getSize" title="Permalink to this definition">¶</a></dt>
+<dd><p>return size of queue</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.queue_set.Queue_Set.isEmpty">
+<code class="descname">isEmpty</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.queue_set.Queue_Set.isEmpty" title="Permalink to this definition">¶</a></dt>
+<dd><p>judge if the queue is empty</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.queue_set.Queue_Set.put">
+<code class="descname">put</code><span class="sig-paren">(</span><em>i</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.queue_set.Queue_Set.put" title="Permalink to this definition">¶</a></dt>
+<dd><p>add an element into the queue</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>i</strong> – element of any type</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">indicates whether this operation is successfully done</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-sMPA.semanticRoadMap">
+<span id="smpa-semanticroadmap-module"></span><h2>sMPA.semanticRoadMap module<a class="headerlink" href="#module-sMPA.semanticRoadMap" title="Permalink to this headline">¶</a></h2>
+<p>This code provides basic functions for semantic main path analysis</p>
+<dl class="class">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap">
+<em class="property">class </em><code class="descclassname">sMPA.semanticRoadMap.</code><code class="descname">semanticRoadMap</code><span class="sig-paren">(</span><em>lsi_serializationAddress</em>, <em>dictionary_serialAddress</em>, <em>pns_serialAddress</em>, <em>index_serialAddress</em>, <em>corpus_serialAddress</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap.addLSIWeight2TopologyWeight4ArcInGrahphViaSimMatrix">
+<code class="descname">addLSIWeight2TopologyWeight4ArcInGrahphViaSimMatrix</code><span class="sig-paren">(</span><em>topology_weight</em>, <em>text_weight</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap.addLSIWeight2TopologyWeight4ArcInGrahphViaSimMatrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>add texutual similarity to original arc weight in self.g, textual similarity is calcualted by LSI</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>topology_weight</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a>) – </li>
+<li><strong>text_weight</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a>) – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap.addLSIWeight2TopologyWeight4ArcInGraph">
+<code class="descname">addLSIWeight2TopologyWeight4ArcInGraph</code><span class="sig-paren">(</span><em>texts</em>, <em>topology_weight=1.0</em>, <em>text_weight=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap.addLSIWeight2TopologyWeight4ArcInGraph" title="Permalink to this definition">¶</a></dt>
+<dd><p>add texutual similarity to original arc weight in self.g, textual similarity is calcualted by LSI</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>texts</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em></a>) – a list of splitted text</li>
+<li><strong>topology_weight</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a>) – weight of topological arc weight in main path searching, such as SPC(Search Path Count), SPNC(Search Path Node Pair)</li>
+<li><strong>text_weight</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a>) – weight of textual similarity in main path searching</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap.calculateSimilarityByTerms">
+<code class="descname">calculateSimilarityByTerms</code><span class="sig-paren">(</span><em>terms</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap.calculateSimilarityByTerms" title="Permalink to this definition">¶</a></dt>
+<dd><p>calculate similarities between terms and docs in self.corpus</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>terms</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – query text</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">similarities list</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)">list</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap.computeArcWeight4GraphByTextSim">
+<code class="descname">computeArcWeight4GraphByTextSim</code><span class="sig-paren">(</span><em>g</em>, <em>pns</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap.computeArcWeight4GraphByTextSim" title="Permalink to this definition">¶</a></dt>
+<dd><p>set textual similarity as arc weight in DiGraph g</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>g</strong> (<em>DiGraph</em>) – </li>
+<li><strong>pns</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em></a>) – a list of patent NO</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap.create_sim_matrix">
+<code class="descname">create_sim_matrix</code><span class="sig-paren">(</span><em>model</em>, <em>corpus</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap.create_sim_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>store similarities between nodes in self.g into a matrix</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>model</strong> (<em>gensim.model</em>) – trained gensim.model, i.e., loaded lsi_serialization</li>
+<li><strong>corpus</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em></a>) – i.e., [dictionary.doc2bow(text) for text in texts]</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">np 2D array</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">np.array</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap.create_sim_sparse_matrix">
+<code class="descname">create_sim_sparse_matrix</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap.create_sim_sparse_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>store similarities between nodes in self.g into an csr_matrix object</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">csr_matrix</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap.getMaxWeightPathBySingleNode_graph_nodeWeight">
+<code class="descname">getMaxWeightPathBySingleNode_graph_nodeWeight</code><span class="sig-paren">(</span><em>nodeID</em>, <em>sims</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap.getMaxWeightPathBySingleNode_graph_nodeWeight" title="Permalink to this definition">¶</a></dt>
+<dd><p>this function used for generating query based main path,notice here only use node weight to search max weight main path,it searches the path with the max Weight given a source nodeID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>nodeID</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – a given source nodeID.,”circulation cooling air temperature control”</li>
+<li><strong>sims</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em></a>) – a list containing the similarites between the query text and every doc in corpus.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><p>A structure like</p>
+<p>[path_weight,[path_1_graph_type,path_2_graph_type]],</p>
+<p>commonly speaking, there is only one path output as result, but if there are two paths with identical weight, output them both</p>
+</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)">list</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap.getMaxWeightPathBySingleNode_graph_nodeWeight_arcWeight">
+<code class="descname">getMaxWeightPathBySingleNode_graph_nodeWeight_arcWeight</code><span class="sig-paren">(</span><em>nodeID</em>, <em>sims</em>, <em>node_weight</em>, <em>arc_Weight</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap.getMaxWeightPathBySingleNode_graph_nodeWeight_arcWeight" title="Permalink to this definition">¶</a></dt>
+<dd><p>this function used for generating query based main path,
+notice here use both node weight and arc weight to search max weight main path
+it searches the path with the max Weight given a source nodeID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>nodeID</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – a given source nodeID.,”circulation cooling air temperature control”</li>
+<li><strong>sims</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em></a>) – a list containing the similarites between the query text and every doc in corpus.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><p>A structure like [path_weight,[path_1_graph_type,path_2_graph_type]],</p>
+<p>commonly speaking, there is only one path output as result, but if there are two paths
+with identical weight, output them both</p>
+</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)">list</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap.getMaxWeightPathBySingleNode_nodeWeight">
+<code class="descname">getMaxWeightPathBySingleNode_nodeWeight</code><span class="sig-paren">(</span><em>nodeID</em>, <em>sims</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap.getMaxWeightPathBySingleNode_nodeWeight" title="Permalink to this definition">¶</a></dt>
+<dd><p>this function used for generating query based main path,
+Attention! Here only use node weight to search max weight main path
+it searches the path with the max Weight given a source nodeID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>nodeID</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – a given source nodeID.,”circulation cooling air temperature control”</li>
+<li><strong>sims</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em></a>) – a list containing the similarites between the query text and every doc in corpus.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A structure like [path_weight,[12,3,5,namely, node list on the result path]]</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)">list</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap.getMaxWeightPathBySingleNode_nodeWeight_raw">
+<code class="descname">getMaxWeightPathBySingleNode_nodeWeight_raw</code><span class="sig-paren">(</span><em>nodeID</em>, <em>sims</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap.getMaxWeightPathBySingleNode_nodeWeight_raw" title="Permalink to this definition">¶</a></dt>
+<dd><p>this function is used for LLDA</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>nodeID</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – given nodeID</li>
+<li><strong>sims</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em></a>) – #sims is llda.n_m_z[:,mc_id]</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">[sum_weight,[1,2,5,namely,nodeIDs of the result path]]</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)">list</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap.getMaxWeightPathInGraph_nodeWeight_arcWeight">
+<code class="descname">getMaxWeightPathInGraph_nodeWeight_arcWeight</code><span class="sig-paren">(</span><em>sims</em>, <em>node_weight=1.0</em>, <em>arc_weight=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap.getMaxWeightPathInGraph_nodeWeight_arcWeight" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function uses node weight and arc weight to generate query based global main path</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>node_weight</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a>) – relative weight of node</li>
+<li><strong>arc_weight</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a>) – relative weight of arc</li>
+<li><strong>sims</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em></a>) – a list containing the similarites between the query text and every doc in corpus.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A structure like [[path_weight,[path_1_graph_type,path_2_graph_type]]…]</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)">list</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap.getMaxWeightPathInGraph_returnGraphType_nodeWeight">
+<code class="descname">getMaxWeightPathInGraph_returnGraphType_nodeWeight</code><span class="sig-paren">(</span><em>sims</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap.getMaxWeightPathInGraph_returnGraphType_nodeWeight" title="Permalink to this definition">¶</a></dt>
+<dd><p>this function uses node weight, which usually is the similarity between query text and docs in corpus, to generate query based global main path</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>sims</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em></a>) – containing the similarities between query text and docs in corpus</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">a list of sorted max weight paths induced by all source nodes</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)">list</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap.getNodeIDByNodePN">
+<code class="descname">getNodeIDByNodePN</code><span class="sig-paren">(</span><em>NodePN</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap.getNodeIDByNodePN" title="Permalink to this definition">¶</a></dt>
+<dd><p>return nodeID in self.g.nodes() by node’s patent NO</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>NodePN</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – node’s patent NO</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap.getSimByNodeID">
+<code class="descname">getSimByNodeID</code><span class="sig-paren">(</span><em>nodeID</em>, <em>sims</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap.getSimByNodeID" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is used in algorithms for searching query-based main path, i.e.,</p>
+<p>getMaxWeightPathBySingleNode_graph_nodeWeight(),
+getMaxWeightPathBySingleNode_nodeWeight(),
+getMaxWeightPathBySingleNode_graph_nodeWeight_arcWeight(),
+getMaxWeightPathBySingleNode_nodeWeight_raw(),</p>
+<p>and it returns similarity between nodeID text and the query text</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>nodeID</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – node index in self.g.nodes()</li>
+<li><strong>sims</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em></a>) – a list containing similarities between docs in corpus and the query text</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">similarity between nodeID text and the query text</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap.getSimByNodePair">
+<code class="descname">getSimByNodePair</code><span class="sig-paren">(</span><em>g</em>, <em>pns</em>, <em>node1</em>, <em>node2</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap.getSimByNodePair" title="Permalink to this definition">¶</a></dt>
+<dd><p>return similarity between node1 and node2</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>g</strong> (<em>DiGraph</em>) – </li>
+<li><strong>pns</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em></a>) – </li>
+<li><strong>node1</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – nodeID</li>
+<li><strong>node2</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – nodeID</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap.getSimByNode_pnIndex">
+<code class="descname">getSimByNode_pnIndex</code><span class="sig-paren">(</span><em>node_pnIndex</em>, <em>sims</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap.getSimByNode_pnIndex" title="Permalink to this definition">¶</a></dt>
+<dd><p>get similarity by node index in pn list</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>node_pnIndex</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – node index in pn list</li>
+<li><strong>sims</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em></a>) – a list containing similarities between corpus and the query text</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap.multi_sources_globalMainPath_textSim_topology_new_sum_method">
+<code class="descname">multi_sources_globalMainPath_textSim_topology_new_sum_method</code><span class="sig-paren">(</span><em>spc_network_file</em>, <em>topology_weight=1.0</em>, <em>text_weight=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap.multi_sources_globalMainPath_textSim_topology_new_sum_method" title="Permalink to this definition">¶</a></dt>
+<dd><p>this function return multiple global main path according to textual similarity and topological attributes, notice newSumMethod refers to internode_sum_distance()</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>spc_network_file</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – absolute path of pajek net file, i.e., ‘deleteLoops_spc_3603.net’</li>
+<li><strong>topology_weight</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – 1.0</li>
+<li><strong>text_weight</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – 1.0</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">containing main paths from all source nodes</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)">list</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap.preprocess">
+<code class="descname">preprocess</code><span class="sig-paren">(</span><em>query_text</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap.preprocess" title="Permalink to this definition">¶</a></dt>
+<dd><p>a function to pre-process query_text</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>query_text</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – query text</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">pre-processed string</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap.queryBasedMainPath_nodeWeight">
+<code class="descname">queryBasedMainPath_nodeWeight</code><span class="sig-paren">(</span><em>query_text</em>, <em>topN_graph=1</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap.queryBasedMainPath_nodeWeight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create query based main path according to node weight and merge top N query paths into one DiGraph object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>query_text</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – query text,e.g.,”circulation cooling air temperature control”</li>
+<li><strong>topN_graph</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – combine top N query paths as the result path.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">networkx.DiGraph object</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">DiGraph</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap.queryBasedMainPath_nodeWeight_arcWeight">
+<code class="descname">queryBasedMainPath_nodeWeight_arcWeight</code><span class="sig-paren">(</span><em>query_text</em>, <em>node_Weight=1.0</em>, <em>arc_Weight=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap.queryBasedMainPath_nodeWeight_arcWeight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create query based main path according to node weight and arc weight</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>query_text</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – query text,e.g.,”circulation cooling air temperature control”</li>
+<li><strong>topN_graph</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – combine top N query paths as the result path.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A networkx.DiGraph object</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">DiGraph</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap.setArcWeight4GrahphByLSI">
+<code class="descname">setArcWeight4GrahphByLSI</code><span class="sig-paren">(</span><em>texts</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap.setArcWeight4GrahphByLSI" title="Permalink to this definition">¶</a></dt>
+<dd><p>set textual similarity to corresponding arc in self.g</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>texts</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em></a>) – a list of splitted string</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap.setArcWeight4GrahphByLSIViaSimMatrix">
+<code class="descname">setArcWeight4GrahphByLSIViaSimMatrix</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap.setArcWeight4GrahphByLSIViaSimMatrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>set arc weight in self.g with similarities of nodes connected by the arc, the similarities are calculated by LSI model</p>
+<p>Args:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-sMPA.xgmml">
+<span id="smpa-xgmml-module"></span><h2>sMPA.xgmml module<a class="headerlink" href="#module-sMPA.xgmml" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="sMPA.xgmml.addEdge">
+<code class="descclassname">sMPA.xgmml.</code><code class="descname">addEdge</code><span class="sig-paren">(</span><em>fid</em>, <em>source</em>, <em>target</em>, <em>ID</em>, <em>Label=''</em>, <em>directed='1'</em>, <em>SourceArrowShape='ARROW'</em>, <em>TargetArrowShape='ARROW'</em>, <em>SourceArrowColor='#000000'</em>, <em>TargetArrowColor='#000000'</em>, <em>LineType='SOLID'</em>, <em>LineWidth=2.0</em>, <em>LineColor='#333333'</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.xgmml.addEdge" title="Permalink to this definition">¶</a></dt>
+<dd><p>addEdge     Add the content of a new edge to an XGMML file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>fid</strong> (<em>file</em>) – The file handle of the XGMML file.</li>
+<li><strong>source</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – The start node of the edge.</li>
+<li><strong>target</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – The end node of the edge.</li>
+<li><strong>ID</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – The ID of the edge, which must be special.</li>
+<li><strong>Label</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – The label of the edge, which will be present on the graph but not necessarily special.</li>
+<li><strong>directed</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – Whether the edge is directed.</li>
+<li><strong>SourceArrowShape</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – The shape of the source arrow. {‘ARROW’,’DELTA’,’CIRCLE’,’HALF_BOTTOM’,’DIAMOND’,’HALF_TOP’,’NONE’,’T’}</li>
+<li><strong>TargetArrowShape</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – The shape of the target arrow. {‘ARROW’,’DELTA’,’CIRCLE’,’HALF_BOTTOM’,’DIAMOND’,’HALF_TOP’,’NONE’,’T’}</li>
+<li><strong>SourceArrowColor</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – The color of the source arror. (unselected)</li>
+<li><strong>TargetArrowColor</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – The color of the target arrow. (unselected)</li>
+<li><strong>LineType</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – The presented type of the line. {‘SOLID’,’DASHDOT’,’ZIGZAG’,’FORWARD_SLASH’,’SINEWAVE’,’SEPARATE_ARROW’,
+‘BACKWARD_SLASH’,’EQUAL_DASH’,’PARALLEL_LINES’,’DASH’,’VERTICAL_SLASH’,
+‘CONTIGUOUS_ARROW’,’DOTS’}</li>
+<li><strong>LineWidth</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a>) – The width of the line.</li>
+<li><strong>LineColor</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – The color of the line.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">boolean</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="sMPA.xgmml.addHead">
+<code class="descclassname">sMPA.xgmml.</code><code class="descname">addHead</code><span class="sig-paren">(</span><em>fid</em>, <em>GraphID</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.xgmml.addHead" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add the head content of an XGMML file to a file handle.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>fid</strong> (<em>file</em>) – The file handle of the XGMML file.</li>
+<li><strong>GraphID</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – The name of the graph.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">boolean</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="sMPA.xgmml.addNode">
+<code class="descclassname">sMPA.xgmml.</code><code class="descname">addNode</code><span class="sig-paren">(</span><em>fid</em>, <em>Label</em>, <em>ID</em>, <em>fill='#ff0000'</em>, <em>shape='ELLIPSE'</em>, <em>x=0.0</em>, <em>y=0.0</em>, <em>w=35.0</em>, <em>h=35.0</em>, <em>FontSize=15</em>, <em>LabelColor='#000000'</em>, <em>Transparency=255</em>, <em>LabelPosition='C</em>, <em>C</em>, <em>c</em>, <em>0</em>, <em>0'</em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.xgmml.addNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add the content of a new node to an XGMML file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>fid</strong> (<em>file</em>) – The file handle of the XGMML file.</li>
+<li><strong>Label</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – The label of the node.</li>
+<li><strong>ID</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – ID of the node.</li>
+<li><strong>fill</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – The color of the node.</li>
+<li><strong>shape</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – The shape of the node.  {‘ELLIPSE’,’ROUND_RECTANGLE’,’TRIANGLE’,’DIAMOND’,
+‘PARALLELOGRAM’,’HEXAGON’,’RECTANGLE’,’OCTAGON’,’V’}</li>
+<li><strong>&amp; y</strong> (<em>x</em>) – The coordinates of the node.</li>
+<li><strong>&amp; h</strong> (<em>w</em>) – The width and height of the node.</li>
+<li><strong>FontSize</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – The font size of the label.</li>
+<li><strong>LabelColor</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – The color of the label.</li>
+<li><strong>Transparency</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – The transparency of the node.</li>
+<li><strong>LabelPosition</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – The label position.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">boolean</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-sMPA">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-sMPA" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to sMPA’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Liang Chen
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
