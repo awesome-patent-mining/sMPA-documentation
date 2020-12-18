@@ -1,0 +1,1646 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>sMPA package &mdash; sMPA 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> sMPA
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">sMPA package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-sMPA.pajekUtil">sMPA.pajekUtil module</a></li>
+<li><a class="reference internal" href="#module-sMPA.pathTopic">sMPA.pathTopic module</a></li>
+<li><a class="reference internal" href="#module-sMPA.queue_set">sMPA.queue_set module</a></li>
+<li><a class="reference internal" href="#module-sMPA.semanticRoadMap">sMPA.semanticRoadMap module</a></li>
+<li><a class="reference internal" href="#module-sMPA.xgmml">sMPA.xgmml module</a></li>
+<li><a class="reference internal" href="#module-sMPA">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">sMPA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>sMPA package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/sMPA.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="smpa-package">
+<h1>sMPA package<a class="headerlink" href="#smpa-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-sMPA.pajekUtil">
+<span id="smpa-pajekutil-module"></span><h2>sMPA.pajekUtil module<a class="headerlink" href="#module-sMPA.pajekUtil" title="Permalink to this headline">¶</a></h2>
+<p>This code provides a series of basic functions to create pajek-style files, such as. net,. clu.</p>
+<dl class="py class">
+<dt id="sMPA.pajekUtil.PajekUtil">
+<em class="property">class </em><code class="sig-prename descclassname">sMPA.pajekUtil.</code><code class="sig-name descname">PajekUtil</code><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="sMPA.pajekUtil.PajekUtil.addPartition2Graph">
+<code class="sig-name descname">addPartition2Graph</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">g</span></em>, <em class="sig-param"><span class="n">partition</span></em>, <em class="sig-param"><span class="n">partition_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.addPartition2Graph" title="Permalink to this definition">¶</a></dt>
+<dd><p>add paritition information to DiGraph</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>g</strong> (<em>DiGraph</em>) – </p></li>
+<li><p><strong>partition</strong> (<em>list</em>) – list</p></li>
+<li><p><strong>partition_name</strong> (<em>str</em>) – String</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>DiGraph</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.pajekUtil.PajekUtil.combine_multisubGraph">
+<code class="sig-name descname">combine_multisubGraph</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sub_graphs</span></em>, <em class="sig-param"><span class="n">g</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.combine_multisubGraph" title="Permalink to this definition">¶</a></dt>
+<dd><p>combine a list of [[0.56,[subgraph1,subgraph2],[0.55,[subgraph3,subgraph4]]] into a DiGraph object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sub_graphs</strong> (<em>list</em>) – [[0.56,[subgraph1,subgraph2],[0.55,[subgraph3,subgraph4]]]</p></li>
+<li><p><strong>g</strong> (<em>DiGraph</em>) – DiGraph</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>DiGraph</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.pajekUtil.PajekUtil.combine_subGraph">
+<code class="sig-name descname">combine_subGraph</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sub_graphs</span></em>, <em class="sig-param"><span class="n">g</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.combine_subGraph" title="Permalink to this definition">¶</a></dt>
+<dd><p>combine a list of sub_graphs into one DiGraph object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sub_graphs</strong> (<em>list</em>) – list</p></li>
+<li><p><strong>g</strong> (<em>DiGraph</em>) – DiGraph</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>DiGraph</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.pajekUtil.PajekUtil.combine_subGraphArray">
+<code class="sig-name descname">combine_subGraphArray</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sub_graphs</span></em>, <em class="sig-param"><span class="n">g</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.combine_subGraphArray" title="Permalink to this definition">¶</a></dt>
+<dd><p>combine a list of sub_graphs into one DiGraph object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sub_graphs</strong> (<em>list</em>) – [sub_graph1,sub_graph2,……]</p></li>
+<li><p><strong>g</strong> (<em>DiGraph</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.pajekUtil.PajekUtil.convertPajek2Cytoscape">
+<code class="sig-name descname">convertPajek2Cytoscape</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pajek_net</span></em>, <em class="sig-param"><span class="n">pajek_par</span></em>, <em class="sig-param"><span class="n">cyto_csv</span></em>, <em class="sig-param"><span class="n">cyto_node</span></em>, <em class="sig-param"><span class="n">cyto_edge</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.convertPajek2Cytoscape" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert pajek file to cytoscape file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pajek_net</strong> (<em>str</em>) – path of net file</p></li>
+<li><p><strong>pajek_par</strong> (<em>str</em>) – path of partition file</p></li>
+<li><p><strong>cyto_csv</strong> (<em>str</em>) – file path to write graph information</p></li>
+<li><p><strong>cyto_node</strong> (<em>str</em>) – file path to write node information</p></li>
+<li><p><strong>cyto_edge</strong> (<em>str</em>) – file path to write edge information</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.pajekUtil.PajekUtil.createNetFromFile">
+<code class="sig-name descname">createNetFromFile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filePath</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.createNetFromFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>create networkx DiGraph g from a txt file with sourcenode,endnode in each line</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filePath</strong> (<em>str</em>) – absolute path of txt file</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>DiGraph</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.pajekUtil.PajekUtil.createNetFromList">
+<code class="sig-name descname">createNetFromList</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pair_array</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.createNetFromList" title="Permalink to this definition">¶</a></dt>
+<dd><p>create networkx DiGraph g from a list with [sourcenode,endnode] in each element</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pair_array</strong> (<em>param</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>DiGraph</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.pajekUtil.PajekUtil.createNetFromMatrixWithWeight">
+<code class="sig-name descname">createNetFromMatrixWithWeight</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cooccur_array</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.createNetFromMatrixWithWeight" title="Permalink to this definition">¶</a></dt>
+<dd><p>create networkx DiGraph g from a 2-D numpy array which indicates its adjacency matrix</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>cooccur_array</strong> (<em>np.array</em>) – 2-D numpy array</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>each node has two attributions, namely,{‘label’:str,’weight’:float}</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>DiGraph</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.pajekUtil.PajekUtil.createNetFromPairWithWeight">
+<code class="sig-name descname">createNetFromPairWithWeight</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filePath</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.createNetFromPairWithWeight" title="Permalink to this definition">¶</a></dt>
+<dd><p>create networkx DiGraph g from a txt file with sourcenode,endnode,weight in each line</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filePath</strong> (<em>str</em>) – absolute path of txt file</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>DiGraph</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.pajekUtil.PajekUtil.createNetWithRelTypeFromList">
+<code class="sig-name descname">createNetWithRelTypeFromList</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">triple_array</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.createNetWithRelTypeFromList" title="Permalink to this definition">¶</a></dt>
+<dd><p>create networkx DiGraph g from a list, notice that reltype is int type</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>triple_array</strong> (<em>list</em>) – with [sourcenode,endnode,arctype] in each element</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>DiGraph</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.pajekUtil.PajekUtil.createPartition4EntityTypeFromList">
+<code class="sig-name descname">createPartition4EntityTypeFromList</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">g</span></em>, <em class="sig-param"><span class="n">entityType_list</span></em>, <em class="sig-param"><span class="n">filePath</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.createPartition4EntityTypeFromList" title="Permalink to this definition">¶</a></dt>
+<dd><p>create partition file from a list containing entity type of each node.
+notice:len(entitytype_list) maybe larger than len(g.nodes()), since DiGraph g is only the independent component
+of origial network while entitytype_list contains the entity types of all nodes from original network</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>g</strong> (<em>DiGraph</em>) – </p></li>
+<li><p><strong>entityType_list</strong> (<em>list</em>) – entityType_list format [entity,type] and type is Integer</p></li>
+<li><p><strong>filePath</strong> (<em>str</em>) – absolute path of output file</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.pajekUtil.PajekUtil.createPartitionByLabelsListFile">
+<code class="sig-name descname">createPartitionByLabelsListFile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">g</span></em>, <em class="sig-param"><span class="n">clu_input</span></em>, <em class="sig-param"><span class="n">clu_output</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.createPartitionByLabelsListFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a txt file containing a list of patentNo, create corresponding partition file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>g</strong> (<em>DiGraph</em>) – an instance of DiGraph object</p></li>
+<li><p><strong>clu_input</strong> (<em>str</em>) – path of a txt file with each line in ‘patentNo,…’ format</p></li>
+<li><p><strong>clu_output</strong> (<em>str</em>) – path of a clu file for pajek to read the partition information</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.pajekUtil.PajekUtil.createPartitionByList">
+<code class="sig-name descname">createPartitionByList</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">g</span></em>, <em class="sig-param"><span class="n">clu</span></em>, <em class="sig-param"><span class="n">fileAddr</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.createPartitionByList" title="Permalink to this definition">¶</a></dt>
+<dd><p>create partition file given partition info contained in clu</p>
+<dl class="simple">
+<dt>Args</dt><dd><p>g(DiGraph): DiGraph
+clu(list): list
+fileAddr(str): absolute path</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.pajekUtil.PajekUtil.createPartitionByNetFile">
+<code class="sig-name descname">createPartitionByNetFile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">graphFile</span></em>, <em class="sig-param"><span class="n">subgraphFile</span></em>, <em class="sig-param"><span class="n">partitionFile</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.createPartitionByNetFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a graph and a subgraph,create a partition file to label the nodes of subgraph from graph parent</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graphFile</strong> (<em>str</em>) – path of a pajek net file</p></li>
+<li><p><strong>subgraphFile</strong> (<em>str</em>) – path of a pajek net file</p></li>
+<li><p><strong>partitionFile</strong> (<em>str</em>) – path of output file</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.pajekUtil.PajekUtil.getGraphFromPajeknet">
+<code class="sig-name descname">getGraphFromPajeknet</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">netAddress</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.getGraphFromPajeknet" title="Permalink to this definition">¶</a></dt>
+<dd><p>load a pajek net file into  an DiGraph object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>netAddress</strong> (<em>str</em>) – path of pajek net file</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>DiGraph</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.pajekUtil.PajekUtil.getMaxWeightArcFromSrc">
+<code class="sig-name descname">getMaxWeightArcFromSrc</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">graph</span></em>, <em class="sig-param"><span class="n">src</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.getMaxWeightArcFromSrc" title="Permalink to this definition">¶</a></dt>
+<dd><p>get max weighted arc given a source node</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graph</strong> (<em>DiGraph</em>) – DiGraph</p></li>
+<li><p><strong>src</strong> (<em>int</em>) – source node id</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>[weight, end_node_list],all nodes in end_node_list with equal weight on the arc to source node</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.pajekUtil.PajekUtil.getMaxWeightPathBySingleNode">
+<code class="sig-name descname">getMaxWeightPathBySingleNode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nodeID</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.getMaxWeightPathBySingleNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>debugged by Liang Chen on 20201129,
+search global main path in self.g given a source node</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>nodeID</strong> (<em>int</em>) – ID of source node</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a list with two element [weight of resulted path, an instance of DiGraph representing the resulted path]</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.pajekUtil.PajekUtil.getMaxWeightPathBySingleNode_Graph">
+<code class="sig-name descname">getMaxWeightPathBySingleNode_Graph</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nodeID</span></em>, <em class="sig-param"><span class="n">g</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.getMaxWeightPathBySingleNode_Graph" title="Permalink to this definition">¶</a></dt>
+<dd><p>search global main path in a graph given a source node</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nodeID</strong> (<em>int</em>) – ID of source node</p></li>
+<li><p><strong>g</strong> (<em>DiGraph</em>) – Graph</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>a list with two element</p>
+<blockquote>
+<div><p>[weight of resulted path, an instance of DiGraph representing the resulted path]</p>
+</div></blockquote>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.pajekUtil.PajekUtil.getSourceNodes">
+<code class="sig-name descname">getSourceNodes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">graph</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.getSourceNodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>get source node list from a directed graph</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>graph</strong> (<em>DiGraph</em>) – DiGraph</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.pajekUtil.PajekUtil.getSubGraphByOneSource">
+<code class="sig-name descname">getSubGraphByOneSource</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">graph</span></em>, <em class="sig-param"><span class="n">sourceNode</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.getSubGraphByOneSource" title="Permalink to this definition">¶</a></dt>
+<dd><p>return a subgraph constituted by successors of a given source node</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graph</strong> (<em>DiGraph</em>) – DiGraph</p></li>
+<li><p><strong>sourceNode</strong> (<em>int</em>) – source node ID</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>DiGraph</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.pajekUtil.PajekUtil.getmulti_MaxWeightPathBySingleNode_Graph">
+<code class="sig-name descname">getmulti_MaxWeightPathBySingleNode_Graph</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nodeID</span></em>, <em class="sig-param"><span class="n">g</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.getmulti_MaxWeightPathBySingleNode_Graph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a source node, if there exists multiple maxWeight paths in Graph g,find them all</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nodeID</strong> (<em>int</em>) – </p></li>
+<li><p><strong>g</strong> (<em>DiGraph</em>) – DiGraph</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a list in format like [4.200226000000001, [graph1,graph2,……]]</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.pajekUtil.PajekUtil.getmulti_MaxWeightPathBySingleNode_Graph_newSumMethod">
+<code class="sig-name descname">getmulti_MaxWeightPathBySingleNode_Graph_newSumMethod</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nodeID</span></em>, <em class="sig-param"><span class="n">g</span></em>, <em class="sig-param"><span class="n">patentNos</span></em>, <em class="sig-param"><span class="n">sim_matrix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.getmulti_MaxWeightPathBySingleNode_Graph_newSumMethod" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search the max weight path from a Graph give source node nodeID, notice that edge weight is measured by textual similarity and stored in sim_matrix, in addition newSumMethod refers to internode_sum_distance()</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nodeID</strong> (<em>int</em>) – source node</p></li>
+<li><p><strong>g</strong> (<em>DiGraph</em>) – </p></li>
+<li><p><strong>patentNos</strong> (<em>list</em>) – list of patent NO.</p></li>
+<li><p><strong>sim_matrix</strong> (<em>np.array</em>) – matrix of text similarity</p></li>
+<li><p><strong>semantic_weight</strong> (<em>float</em>) – weight of textual similarity between nodes</p></li>
+<li><p><strong>topology_weight</strong> (<em>float</em>) – weight of topological value between nodes, such as SPC,SPNC</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a list in format like [4.200226000000001, [graph1,graph2,……]]</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.pajekUtil.PajekUtil.getmulti_MaxWeightPathBySingleNode_Graph_newSumMethod_textSim_topology">
+<code class="sig-name descname">getmulti_MaxWeightPathBySingleNode_Graph_newSumMethod_textSim_topology</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nodeID</span></em>, <em class="sig-param"><span class="n">g</span></em>, <em class="sig-param"><span class="n">patentNos</span></em>, <em class="sig-param"><span class="n">sim_matrix</span></em>, <em class="sig-param"><span class="n">semantic_weight</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">topology_weight</span><span class="o">=</span><span class="default_value">1.0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.getmulti_MaxWeightPathBySingleNode_Graph_newSumMethod_textSim_topology" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search the max weight path from a Graph give source node nodeID, notice the edge weight is calculated by semantic_sim*semantic_weight+topology*topology_weight_sim
+,notice newSumMethod refers to internode_sum_distance()</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nodeID</strong> (<em>int</em>) – source node</p></li>
+<li><p><strong>g</strong> (<em>DiGraph</em>) – </p></li>
+<li><p><strong>patentNos</strong> (<em>list</em>) – list of patent NO.</p></li>
+<li><p><strong>sim_matrix</strong> (<em>np.array</em>) – matrix of text similarity</p></li>
+<li><p><strong>semantic_weight</strong> (<em>float</em>) – weight of textual similarity between nodes</p></li>
+<li><p><strong>topology_weight</strong> (<em>float</em>) – weight of topological value between nodes, such as SPC,SPNC</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a list in format like [4.200226000000001, [graph1,graph2,……]]</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.pajekUtil.PajekUtil.globalMainPath">
+<code class="sig-name descname">globalMainPath</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.globalMainPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>search a list of max weighted paths given all source nodes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a list of max weighted paths given all source nodes</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.pajekUtil.PajekUtil.internode_sum_distance">
+<code class="sig-name descname">internode_sum_distance</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sources</span></em>, <em class="sig-param"><span class="n">target</span></em>, <em class="sig-param"><span class="n">sim_matrix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.internode_sum_distance" title="Permalink to this definition">¶</a></dt>
+<dd><p>calculate the weight between source nodes to target node by sum up the edge weight of target node to all source nodes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sources</strong> (<em>list</em>) – source node IDs</p></li>
+<li><p><strong>target</strong> (<em>int</em>) – target node ID</p></li>
+<li><p><strong>sim_matrix</strong> (<em>np.array</em>) – textual similarities between all nodes</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>result weight</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.pajekUtil.PajekUtil.loadNetworkFromPajeknet">
+<code class="sig-name descname">loadNetworkFromPajeknet</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">netAddress</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.loadNetworkFromPajeknet" title="Permalink to this definition">¶</a></dt>
+<dd><p>load a pajek net file into self.g as an DiGraph object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>netAddress</strong> (<em>str</em>) – absolute path of pajek net file</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.pajekUtil.PajekUtil.loadNetworkFromPajeknetWithMultipleRelType">
+<code class="sig-name descname">loadNetworkFromPajeknetWithMultipleRelType</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">netAddress</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.loadNetworkFromPajeknetWithMultipleRelType" title="Permalink to this definition">¶</a></dt>
+<dd><p>load pajek net file with multi-type edges into an DiGraph object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>netAddress</strong> (<em>str</em>) – path of pajek net file</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>DiGraph</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.pajekUtil.PajekUtil.loadNetworkFromPajeknet_edges">
+<code class="sig-name descname">loadNetworkFromPajeknet_edges</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">netAddress</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.loadNetworkFromPajeknet_edges" title="Permalink to this definition">¶</a></dt>
+<dd><p>load graph into self.g from net file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>netAddress</strong> (<em>str</em>) – absolute path of net file</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.pajekUtil.PajekUtil.loadPartitionFromClu">
+<code class="sig-name descname">loadPartitionFromClu</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">netAddress</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.loadPartitionFromClu" title="Permalink to this definition">¶</a></dt>
+<dd><p>load partition info from clu file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>netAddress</strong> (<em>str</em>) – absolute path of clu file</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a list of partition info</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.pajekUtil.PajekUtil.localMainPath">
+<code class="sig-name descname">localMainPath</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">graph</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.localMainPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>get local main path from graph</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>graph</strong> (<em>DiGraph</em>) – DiGraph</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>local main path as an instance of DiGraph</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>DiGraph</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.pajekUtil.PajekUtil.localMainPathFromOneSource">
+<code class="sig-name descname">localMainPathFromOneSource</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">graph</span></em>, <em class="sig-param"><span class="n">i</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.localMainPathFromOneSource" title="Permalink to this definition">¶</a></dt>
+<dd><p>return local main path give a source node</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graph</strong> (<em>DiGraph</em>) – DiGraph</p></li>
+<li><p><strong>i</strong> (<em>int</em>) – source node ID</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>DiGraph</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.pajekUtil.PajekUtil.multiSourcePath">
+<code class="sig-name descname">multiSourcePath</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">g</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.multiSourcePath" title="Permalink to this definition">¶</a></dt>
+<dd><p>return a DiGraph constituted by local main paths induced by all source nodes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>g</strong> (<em>DiGraph</em>) – DiGraph</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>DiGraph</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.pajekUtil.PajekUtil.multi_sources_globalMainPath_return_DiGraph">
+<code class="sig-name descname">multi_sources_globalMainPath_return_DiGraph</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">g</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.multi_sources_globalMainPath_return_DiGraph" title="Permalink to this definition">¶</a></dt>
+<dd><p>search a list of max weighted paths given all source nodes and merge them into a DiGraph</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>g</strong> (<em>DiGraph</em>) – DiGraph</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>DiGraph</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.pajekUtil.PajekUtil.multi_sources_globalMainPath_return_list">
+<code class="sig-name descname">multi_sources_globalMainPath_return_list</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">g</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.multi_sources_globalMainPath_return_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>search a list of max weighted paths given all source nodes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>g</strong> (<em>DiGraph</em>) – DiGraph</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list containing main paths from all source nodes</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.pajekUtil.PajekUtil.sort_subGraph">
+<code class="sig-name descname">sort_subGraph</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sub_graphs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.sort_subGraph" title="Permalink to this definition">¶</a></dt>
+<dd><p>sort a list of subGraphs by graph weight</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>sub_graphs</strong> (<em>list</em>) – [sub_graph1,sub_graph2,sub_graph3,…….]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>[[weight_sum_sub1,sub_graph_1],[weight_sum_sub2,sub_graph_2],…]</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.pajekUtil.PajekUtil.writeEdgeAttOfCytoscape2file">
+<code class="sig-name descname">writeEdgeAttOfCytoscape2file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">g</span></em>, <em class="sig-param"><span class="n">filePath</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.writeEdgeAttOfCytoscape2file" title="Permalink to this definition">¶</a></dt>
+<dd><p>write attribution of edges in DiGraph in cytoscape file format</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>g</strong> (<em>DiGraph</em>) – </p></li>
+<li><p><strong>filePath</strong> (<em>str</em>) – absolute path</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.pajekUtil.PajekUtil.writeGraph2CytoscapeCSV">
+<code class="sig-name descname">writeGraph2CytoscapeCSV</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">g</span></em>, <em class="sig-param"><span class="n">filePath</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.writeGraph2CytoscapeCSV" title="Permalink to this definition">¶</a></dt>
+<dd><p>write DiGraph in cytoscape supported CSV format</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>g</strong> (<em>DiGraph</em>) – </p></li>
+<li><p><strong>filePath</strong> (<em>str</em>) – absolute path</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.pajekUtil.PajekUtil.writeGraph2CytoscapeXGMML">
+<code class="sig-name descname">writeGraph2CytoscapeXGMML</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">g</span></em>, <em class="sig-param"><span class="n">filePath</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.writeGraph2CytoscapeXGMML" title="Permalink to this definition">¶</a></dt>
+<dd><p>output DiGraph in cytoscape format</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>g</strong> (<em>DiGraph</em>) – </p></li>
+<li><p><strong>filePath</strong> (<em>str</em>) – absolute path</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.pajekUtil.PajekUtil.writeGraph2pajekNetFile">
+<code class="sig-name descname">writeGraph2pajekNetFile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">g</span></em>, <em class="sig-param"><span class="n">filePath</span></em>, <em class="sig-param"><span class="n">networkType</span><span class="o">=</span><span class="default_value">'Arcs'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.writeGraph2pajekNetFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is added on 20191007 by Liang Chen</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>g</strong> (<em>DiGraph</em>) – </p></li>
+<li><p><strong>filePath</strong> (<em>str</em>) – absolute path</p></li>
+<li><p><strong>networkType</strong> (<em>str</em>) – {‘Arcs’,’Edges’}, indicate whether the output network is directed or not,networkType</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.pajekUtil.PajekUtil.writeLabel_par_map_2_txt">
+<code class="sig-name descname">writeLabel_par_map_2_txt</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">g</span></em>, <em class="sig-param"><span class="n">clu</span></em>, <em class="sig-param"><span class="n">fileAddre</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.writeLabel_par_map_2_txt" title="Permalink to this definition">¶</a></dt>
+<dd><p>create node_label-partition map,and write to a file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>g</strong> (<em>DiGraph</em>) – DiGraph</p></li>
+<li><p><strong>clu</strong> (<em>list</em>) – list</p></li>
+<li><p><strong>fileAddre</strong> (<em>str</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.pajekUtil.PajekUtil.writeNodeAttOfCytoscape2file">
+<code class="sig-name descname">writeNodeAttOfCytoscape2file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">g</span></em>, <em class="sig-param"><span class="n">filePath</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pajekUtil.PajekUtil.writeNodeAttOfCytoscape2file" title="Permalink to this definition">¶</a></dt>
+<dd><p>write attribution of nodes in DiGraph in cytoscape file format</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>g</strong> (<em>DiGraph</em>) – </p></li>
+<li><p><strong>filePath</strong> (<em>str</em>) – absolute path</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-sMPA.pathTopic">
+<span id="smpa-pathtopic-module"></span><h2>sMPA.pathTopic module<a class="headerlink" href="#module-sMPA.pathTopic" title="Permalink to this headline">¶</a></h2>
+<p>This code provides a series of basic functions for topic analysis of main path</p>
+<dl class="py class">
+<dt id="sMPA.pathTopic.PathTopic">
+<em class="property">class </em><code class="sig-prename descclassname">sMPA.pathTopic.</code><code class="sig-name descname">PathTopic</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">texts_serialAddress</span></em>, <em class="sig-param"><span class="n">pns_serialAddress</span></em>, <em class="sig-param"><span class="n">lsi_serializationAddress</span></em>, <em class="sig-param"><span class="n">dictionary_serialAddress</span></em>, <em class="sig-param"><span class="n">topic_num</span><span class="o">=</span><span class="default_value">10</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pathTopic.PathTopic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="sMPA.pathTopic.PathTopic.generatePathTopic">
+<code class="sig-name descname">generatePathTopic</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pathTopic.PathTopic.generatePathTopic" title="Permalink to this definition">¶</a></dt>
+<dd><p>return semantic topic representation of a path</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>DiGraph</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>1D np array</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.pathTopic.PathTopic.normalize">
+<code class="sig-name descname">normalize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">v</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pathTopic.PathTopic.normalize" title="Permalink to this definition">¶</a></dt>
+<dd><p>return normalized vector</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>v</strong> (<em>np.array</em>) – vector</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>normalized vector</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.pathTopic.PathTopic.transformCorpusLsi2Numpy">
+<code class="sig-name descname">transformCorpusLsi2Numpy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">corpus_index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.pathTopic.PathTopic.transformCorpusLsi2Numpy" title="Permalink to this definition">¶</a></dt>
+<dd><p>transform corpus to numpy array format</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>corpus_index</strong> (<em>list</em>) – [dictionary.doc2bow(text) for text in texts]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>np.array([corpus_index.__len__(),self.topic_number])</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-sMPA.queue_set">
+<span id="smpa-queue-set-module"></span><h2>sMPA.queue_set module<a class="headerlink" href="#module-sMPA.queue_set" title="Permalink to this headline">¶</a></h2>
+<p>This code provides a series of utilities for queue operation</p>
+<dl class="py class">
+<dt id="sMPA.queue_set.Queue_Set">
+<em class="property">class </em><code class="sig-prename descclassname">sMPA.queue_set.</code><code class="sig-name descname">Queue_Set</code><a class="headerlink" href="#sMPA.queue_set.Queue_Set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="sMPA.queue_set.Queue_Set.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.queue_set.Queue_Set.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>pop an element from the queue</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>an element of any type</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>elment</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.queue_set.Queue_Set.getSize">
+<code class="sig-name descname">getSize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.queue_set.Queue_Set.getSize" title="Permalink to this definition">¶</a></dt>
+<dd><p>return size of queue</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.queue_set.Queue_Set.isEmpty">
+<code class="sig-name descname">isEmpty</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.queue_set.Queue_Set.isEmpty" title="Permalink to this definition">¶</a></dt>
+<dd><p>judge if the queue is empty</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.queue_set.Queue_Set.put">
+<code class="sig-name descname">put</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">i</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.queue_set.Queue_Set.put" title="Permalink to this definition">¶</a></dt>
+<dd><p>add an element into the queue</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>i</strong> – element of any type</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>indicates whether this operation is successfully done</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-sMPA.semanticRoadMap">
+<span id="smpa-semanticroadmap-module"></span><h2>sMPA.semanticRoadMap module<a class="headerlink" href="#module-sMPA.semanticRoadMap" title="Permalink to this headline">¶</a></h2>
+<p>This code provides basic functions for semantic main path analysis</p>
+<dl class="py class">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap">
+<em class="property">class </em><code class="sig-prename descclassname">sMPA.semanticRoadMap.</code><code class="sig-name descname">semanticRoadMap</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lsi_serializationAddress</span></em>, <em class="sig-param"><span class="n">dictionary_serialAddress</span></em>, <em class="sig-param"><span class="n">pns_serialAddress</span></em>, <em class="sig-param"><span class="n">index_serialAddress</span></em>, <em class="sig-param"><span class="n">corpus_serialAddress</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap.addLSIWeight2TopologyWeight4ArcInGrahphViaSimMatrix">
+<code class="sig-name descname">addLSIWeight2TopologyWeight4ArcInGrahphViaSimMatrix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">topology_weight</span></em>, <em class="sig-param"><span class="n">text_weight</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap.addLSIWeight2TopologyWeight4ArcInGrahphViaSimMatrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>add texutual similarity to original arc weight in self.g, textual similarity is calcualted by LSI</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>topology_weight</strong> (<em>float</em>) – </p></li>
+<li><p><strong>text_weight</strong> (<em>float</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap.addLSIWeight2TopologyWeight4ArcInGraph">
+<code class="sig-name descname">addLSIWeight2TopologyWeight4ArcInGraph</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">texts</span></em>, <em class="sig-param"><span class="n">topology_weight</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">text_weight</span><span class="o">=</span><span class="default_value">1.0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap.addLSIWeight2TopologyWeight4ArcInGraph" title="Permalink to this definition">¶</a></dt>
+<dd><p>add texutual similarity to original arc weight in self.g, textual similarity is calcualted by LSI</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>texts</strong> (<em>list</em>) – a list of splitted text</p></li>
+<li><p><strong>topology_weight</strong> (<em>float</em>) – weight of topological arc weight in main path searching, such as SPC(Search Path Count), SPNC(Search Path Node Pair)</p></li>
+<li><p><strong>text_weight</strong> (<em>float</em>) – weight of textual similarity in main path searching</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap.calculateSimilarityByTerms">
+<code class="sig-name descname">calculateSimilarityByTerms</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">terms</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap.calculateSimilarityByTerms" title="Permalink to this definition">¶</a></dt>
+<dd><p>calculate similarities between terms and docs in self.corpus</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>terms</strong> (<em>str</em>) – query text</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>similarities list</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap.computeArcWeight4GraphByTextSim">
+<code class="sig-name descname">computeArcWeight4GraphByTextSim</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">g</span></em>, <em class="sig-param"><span class="n">pns</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap.computeArcWeight4GraphByTextSim" title="Permalink to this definition">¶</a></dt>
+<dd><p>set textual similarity as arc weight in DiGraph g</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>g</strong> (<em>DiGraph</em>) – </p></li>
+<li><p><strong>pns</strong> (<em>list</em>) – a list of patent NO</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap.create_sim_matrix">
+<code class="sig-name descname">create_sim_matrix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">corpus</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap.create_sim_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>store similarities between nodes in self.g into a matrix</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> (<em>gensim.model</em>) – trained gensim.model, i.e., loaded lsi_serialization</p></li>
+<li><p><strong>corpus</strong> (<em>list</em>) – i.e., [dictionary.doc2bow(text) for text in texts]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>np 2D array</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap.create_sim_sparse_matrix">
+<code class="sig-name descname">create_sim_sparse_matrix</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap.create_sim_sparse_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>store similarities between nodes in self.g into an csr_matrix object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>csr_matrix</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap.getMaxWeightPathBySingleNode_graph_nodeWeight">
+<code class="sig-name descname">getMaxWeightPathBySingleNode_graph_nodeWeight</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nodeID</span></em>, <em class="sig-param"><span class="n">sims</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap.getMaxWeightPathBySingleNode_graph_nodeWeight" title="Permalink to this definition">¶</a></dt>
+<dd><p>this function used for generating query based main path,notice here only use node weight to search max weight main path,it searches the path with the max Weight given a source nodeID</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nodeID</strong> (<em>int</em>) – a given source nodeID.,”circulation cooling air temperature control”</p></li>
+<li><p><strong>sims</strong> (<em>list</em>) – a list containing the similarites between the query text and every doc in corpus.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>A structure like</p>
+<p>[path_weight,[path_1_graph_type,path_2_graph_type]],</p>
+<p>commonly speaking, there is only one path output as result, but if there are two paths with identical weight, output them both</p>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap.getMaxWeightPathBySingleNode_graph_nodeWeight_arcWeight">
+<code class="sig-name descname">getMaxWeightPathBySingleNode_graph_nodeWeight_arcWeight</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nodeID</span></em>, <em class="sig-param"><span class="n">sims</span></em>, <em class="sig-param"><span class="n">node_weight</span></em>, <em class="sig-param"><span class="n">arc_Weight</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap.getMaxWeightPathBySingleNode_graph_nodeWeight_arcWeight" title="Permalink to this definition">¶</a></dt>
+<dd><p>this function used for generating query based main path,
+notice here use both node weight and arc weight to search max weight main path
+it searches the path with the max Weight given a source nodeID</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nodeID</strong> (<em>int</em>) – a given source nodeID.,”circulation cooling air temperature control”</p></li>
+<li><p><strong>sims</strong> (<em>list</em>) – a list containing the similarites between the query text and every doc in corpus.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>A structure like [path_weight,[path_1_graph_type,path_2_graph_type]],</p>
+<p>commonly speaking, there is only one path output as result, but if there are two paths
+with identical weight, output them both</p>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap.getMaxWeightPathBySingleNode_nodeWeight">
+<code class="sig-name descname">getMaxWeightPathBySingleNode_nodeWeight</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nodeID</span></em>, <em class="sig-param"><span class="n">sims</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap.getMaxWeightPathBySingleNode_nodeWeight" title="Permalink to this definition">¶</a></dt>
+<dd><p>this function used for generating query based main path,
+Attention! Here only use node weight to search max weight main path
+it searches the path with the max Weight given a source nodeID</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nodeID</strong> (<em>int</em>) – a given source nodeID.,”circulation cooling air temperature control”</p></li>
+<li><p><strong>sims</strong> (<em>list</em>) – a list containing the similarites between the query text and every doc in corpus.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A structure like [path_weight,[12,3,5,namely, node list on the result path]]</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap.getMaxWeightPathBySingleNode_nodeWeight_raw">
+<code class="sig-name descname">getMaxWeightPathBySingleNode_nodeWeight_raw</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nodeID</span></em>, <em class="sig-param"><span class="n">sims</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap.getMaxWeightPathBySingleNode_nodeWeight_raw" title="Permalink to this definition">¶</a></dt>
+<dd><p>this function is used for LLDA</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nodeID</strong> (<em>int</em>) – given nodeID</p></li>
+<li><p><strong>sims</strong> (<em>list</em>) – #sims is llda.n_m_z[:,mc_id]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>[sum_weight,[1,2,5,namely,nodeIDs of the result path]]</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap.getMaxWeightPathInGraph_nodeWeight_arcWeight">
+<code class="sig-name descname">getMaxWeightPathInGraph_nodeWeight_arcWeight</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sims</span></em>, <em class="sig-param"><span class="n">node_weight</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">arc_weight</span><span class="o">=</span><span class="default_value">1.0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap.getMaxWeightPathInGraph_nodeWeight_arcWeight" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function uses node weight and arc weight to generate query based global main path</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node_weight</strong> (<em>float</em>) – relative weight of node</p></li>
+<li><p><strong>arc_weight</strong> (<em>float</em>) – relative weight of arc</p></li>
+<li><p><strong>sims</strong> (<em>list</em>) – a list containing the similarites between the query text and every doc in corpus.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A structure like [[path_weight,[path_1_graph_type,path_2_graph_type]]…]</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap.getMaxWeightPathInGraph_returnGraphType_nodeWeight">
+<code class="sig-name descname">getMaxWeightPathInGraph_returnGraphType_nodeWeight</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sims</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap.getMaxWeightPathInGraph_returnGraphType_nodeWeight" title="Permalink to this definition">¶</a></dt>
+<dd><p>this function uses node weight, which usually is the similarity between query text and docs in corpus, to generate query based global main path</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>sims</strong> (<em>list</em>) – containing the similarities between query text and docs in corpus</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a list of sorted max weight paths induced by all source nodes</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap.getNodeIDByNodePN">
+<code class="sig-name descname">getNodeIDByNodePN</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">NodePN</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap.getNodeIDByNodePN" title="Permalink to this definition">¶</a></dt>
+<dd><p>return nodeID in self.g.nodes() by node’s patent NO</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>NodePN</strong> (<em>str</em>) – node’s patent NO</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap.getSimByNodeID">
+<code class="sig-name descname">getSimByNodeID</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nodeID</span></em>, <em class="sig-param"><span class="n">sims</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap.getSimByNodeID" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is used in algorithms for searching query-based main path, i.e.,</p>
+<p>getMaxWeightPathBySingleNode_graph_nodeWeight(),
+getMaxWeightPathBySingleNode_nodeWeight(),
+getMaxWeightPathBySingleNode_graph_nodeWeight_arcWeight(),
+getMaxWeightPathBySingleNode_nodeWeight_raw(),</p>
+<p>and it returns similarity between nodeID text and the query text</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nodeID</strong> (<em>int</em>) – node index in self.g.nodes()</p></li>
+<li><p><strong>sims</strong> (<em>list</em>) – a list containing similarities between docs in corpus and the query text</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>similarity between nodeID text and the query text</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap.getSimByNodePair">
+<code class="sig-name descname">getSimByNodePair</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">g</span></em>, <em class="sig-param"><span class="n">pns</span></em>, <em class="sig-param"><span class="n">node1</span></em>, <em class="sig-param"><span class="n">node2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap.getSimByNodePair" title="Permalink to this definition">¶</a></dt>
+<dd><p>return similarity between node1 and node2</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>g</strong> (<em>DiGraph</em>) – </p></li>
+<li><p><strong>pns</strong> (<em>list</em>) – </p></li>
+<li><p><strong>node1</strong> (<em>int</em>) – nodeID</p></li>
+<li><p><strong>node2</strong> (<em>int</em>) – nodeID</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap.getSimByNode_pnIndex">
+<code class="sig-name descname">getSimByNode_pnIndex</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">node_pnIndex</span></em>, <em class="sig-param"><span class="n">sims</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap.getSimByNode_pnIndex" title="Permalink to this definition">¶</a></dt>
+<dd><p>get similarity by node index in pn list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node_pnIndex</strong> (<em>int</em>) – node index in pn list</p></li>
+<li><p><strong>sims</strong> (<em>list</em>) – a list containing similarities between corpus and the query text</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap.multi_sources_globalMainPath_textSim_topology_new_sum_method">
+<code class="sig-name descname">multi_sources_globalMainPath_textSim_topology_new_sum_method</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">spc_network_file</span></em>, <em class="sig-param"><span class="n">topology_weight</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">text_weight</span><span class="o">=</span><span class="default_value">1.0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap.multi_sources_globalMainPath_textSim_topology_new_sum_method" title="Permalink to this definition">¶</a></dt>
+<dd><p>this function return multiple global main path according to textual similarity and topological attributes, notice newSumMethod refers to internode_sum_distance()</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>spc_network_file</strong> (<em>str</em>) – absolute path of pajek net file, i.e., ‘deleteLoops_spc_3603.net’</p></li>
+<li><p><strong>topology_weight</strong> (<em>int</em>) – 1.0</p></li>
+<li><p><strong>text_weight</strong> (<em>int</em>) – 1.0</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>containing main paths from all source nodes</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap.preprocess">
+<code class="sig-name descname">preprocess</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">query_text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap.preprocess" title="Permalink to this definition">¶</a></dt>
+<dd><p>a function to pre-process query_text</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>query_text</strong> (<em>str</em>) – query text</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>pre-processed string</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap.queryBasedMainPath_nodeWeight">
+<code class="sig-name descname">queryBasedMainPath_nodeWeight</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">query_text</span></em>, <em class="sig-param"><span class="n">topN_graph</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap.queryBasedMainPath_nodeWeight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create query based main path according to node weight and merge top N query paths into one DiGraph object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>query_text</strong> (<em>str</em>) – query text,e.g.,”circulation cooling air temperature control”</p></li>
+<li><p><strong>topN_graph</strong> (<em>int</em>) – combine top N query paths as the result path.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>networkx.DiGraph object</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>DiGraph</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap.queryBasedMainPath_nodeWeight_arcWeight">
+<code class="sig-name descname">queryBasedMainPath_nodeWeight_arcWeight</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">query_text</span></em>, <em class="sig-param"><span class="n">node_Weight</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">arc_Weight</span><span class="o">=</span><span class="default_value">1.0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap.queryBasedMainPath_nodeWeight_arcWeight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create query based main path according to node weight and arc weight</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>query_text</strong> (<em>str</em>) – query text,e.g.,”circulation cooling air temperature control”</p></li>
+<li><p><strong>topN_graph</strong> (<em>int</em>) – combine top N query paths as the result path.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A networkx.DiGraph object</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>DiGraph</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap.setArcWeight4GrahphByLSI">
+<code class="sig-name descname">setArcWeight4GrahphByLSI</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">texts</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap.setArcWeight4GrahphByLSI" title="Permalink to this definition">¶</a></dt>
+<dd><p>set textual similarity to corresponding arc in self.g</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>texts</strong> (<em>list</em>) – a list of splitted string</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sMPA.semanticRoadMap.semanticRoadMap.setArcWeight4GrahphByLSIViaSimMatrix">
+<code class="sig-name descname">setArcWeight4GrahphByLSIViaSimMatrix</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.semanticRoadMap.semanticRoadMap.setArcWeight4GrahphByLSIViaSimMatrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>set arc weight in self.g with similarities of nodes connected by the arc, the similarities are calculated by LSI model</p>
+<p>Args:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-sMPA.xgmml">
+<span id="smpa-xgmml-module"></span><h2>sMPA.xgmml module<a class="headerlink" href="#module-sMPA.xgmml" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="sMPA.xgmml.addEdge">
+<code class="sig-prename descclassname">sMPA.xgmml.</code><code class="sig-name descname">addEdge</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fid</span></em>, <em class="sig-param"><span class="n">source</span></em>, <em class="sig-param"><span class="n">target</span></em>, <em class="sig-param"><span class="n">ID</span></em>, <em class="sig-param"><span class="n">Label</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">directed</span><span class="o">=</span><span class="default_value">'1'</span></em>, <em class="sig-param"><span class="n">SourceArrowShape</span><span class="o">=</span><span class="default_value">'ARROW'</span></em>, <em class="sig-param"><span class="n">TargetArrowShape</span><span class="o">=</span><span class="default_value">'ARROW'</span></em>, <em class="sig-param"><span class="n">SourceArrowColor</span><span class="o">=</span><span class="default_value">'#000000'</span></em>, <em class="sig-param"><span class="n">TargetArrowColor</span><span class="o">=</span><span class="default_value">'#000000'</span></em>, <em class="sig-param"><span class="n">LineType</span><span class="o">=</span><span class="default_value">'SOLID'</span></em>, <em class="sig-param"><span class="n">LineWidth</span><span class="o">=</span><span class="default_value">2.0</span></em>, <em class="sig-param"><span class="n">LineColor</span><span class="o">=</span><span class="default_value">'#333333'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.xgmml.addEdge" title="Permalink to this definition">¶</a></dt>
+<dd><p>addEdge     Add the content of a new edge to an XGMML file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fid</strong> (<em>file</em>) – The file handle of the XGMML file.</p></li>
+<li><p><strong>source</strong> (<em>int</em>) – The start node of the edge.</p></li>
+<li><p><strong>target</strong> (<em>int</em>) – The end node of the edge.</p></li>
+<li><p><strong>ID</strong> (<em>int</em>) – The ID of the edge, which must be special.</p></li>
+<li><p><strong>Label</strong> (<em>str</em>) – The label of the edge, which will be present on the graph but not necessarily special.</p></li>
+<li><p><strong>directed</strong> (<em>str</em>) – Whether the edge is directed.</p></li>
+<li><p><strong>SourceArrowShape</strong> (<em>str</em>) – The shape of the source arrow. {‘ARROW’,’DELTA’,’CIRCLE’,’HALF_BOTTOM’,’DIAMOND’,’HALF_TOP’,’NONE’,’T’}</p></li>
+<li><p><strong>TargetArrowShape</strong> (<em>str</em>) – The shape of the target arrow. {‘ARROW’,’DELTA’,’CIRCLE’,’HALF_BOTTOM’,’DIAMOND’,’HALF_TOP’,’NONE’,’T’}</p></li>
+<li><p><strong>SourceArrowColor</strong> (<em>str</em>) – The color of the source arror. (unselected)</p></li>
+<li><p><strong>TargetArrowColor</strong> (<em>str</em>) – The color of the target arrow. (unselected)</p></li>
+<li><p><strong>LineType</strong> (<em>str</em>) – The presented type of the line. {‘SOLID’,’DASHDOT’,’ZIGZAG’,’FORWARD_SLASH’,’SINEWAVE’,’SEPARATE_ARROW’,
+‘BACKWARD_SLASH’,’EQUAL_DASH’,’PARALLEL_LINES’,’DASH’,’VERTICAL_SLASH’,
+‘CONTIGUOUS_ARROW’,’DOTS’}</p></li>
+<li><p><strong>LineWidth</strong> (<em>float</em>) – The width of the line.</p></li>
+<li><p><strong>LineColor</strong> (<em>str</em>) – The color of the line.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="sMPA.xgmml.addHead">
+<code class="sig-prename descclassname">sMPA.xgmml.</code><code class="sig-name descname">addHead</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fid</span></em>, <em class="sig-param"><span class="n">GraphID</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.xgmml.addHead" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add the head content of an XGMML file to a file handle.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fid</strong> (<em>file</em>) – The file handle of the XGMML file.</p></li>
+<li><p><strong>GraphID</strong> (<em>str</em>) – The name of the graph.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="sMPA.xgmml.addNode">
+<code class="sig-prename descclassname">sMPA.xgmml.</code><code class="sig-name descname">addNode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fid</span></em>, <em class="sig-param"><span class="n">Label</span></em>, <em class="sig-param"><span class="n">ID</span></em>, <em class="sig-param"><span class="n">fill</span><span class="o">=</span><span class="default_value">'#ff0000'</span></em>, <em class="sig-param"><span class="n">shape</span><span class="o">=</span><span class="default_value">'ELLIPSE'</span></em>, <em class="sig-param"><span class="n">x</span><span class="o">=</span><span class="default_value">0.0</span></em>, <em class="sig-param"><span class="n">y</span><span class="o">=</span><span class="default_value">0.0</span></em>, <em class="sig-param"><span class="n">w</span><span class="o">=</span><span class="default_value">35.0</span></em>, <em class="sig-param"><span class="n">h</span><span class="o">=</span><span class="default_value">35.0</span></em>, <em class="sig-param"><span class="n">FontSize</span><span class="o">=</span><span class="default_value">15</span></em>, <em class="sig-param"><span class="n">LabelColor</span><span class="o">=</span><span class="default_value">'#000000'</span></em>, <em class="sig-param"><span class="n">Transparency</span><span class="o">=</span><span class="default_value">255</span></em>, <em class="sig-param"><span class="n">LabelPosition</span><span class="o">=</span><span class="default_value">'C,C,c,0,0'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sMPA.xgmml.addNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add the content of a new node to an XGMML file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fid</strong> (<em>file</em>) – The file handle of the XGMML file.</p></li>
+<li><p><strong>Label</strong> (<em>str</em>) – The label of the node.</p></li>
+<li><p><strong>ID</strong> (<em>int</em>) – ID of the node.</p></li>
+<li><p><strong>fill</strong> (<em>str</em>) – The color of the node.</p></li>
+<li><p><strong>shape</strong> (<em>str</em>) – The shape of the node.  {‘ELLIPSE’,’ROUND_RECTANGLE’,’TRIANGLE’,’DIAMOND’,
+‘PARALLELOGRAM’,’HEXAGON’,’RECTANGLE’,’OCTAGON’,’V’}</p></li>
+<li><p><strong>&amp; y</strong> (<em>x</em>) – The coordinates of the node.</p></li>
+<li><p><strong>&amp; h</strong> (<em>w</em>) – The width and height of the node.</p></li>
+<li><p><strong>FontSize</strong> (<em>int</em>) – The font size of the label.</p></li>
+<li><p><strong>LabelColor</strong> (<em>str</em>) – The color of the label.</p></li>
+<li><p><strong>Transparency</strong> (<em>int</em>) – The transparency of the node.</p></li>
+<li><p><strong>LabelPosition</strong> (<em>str</em>) – The label position.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-sMPA">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-sMPA" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Liang Chen
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
