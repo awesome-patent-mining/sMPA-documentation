@@ -1,5 +1,5 @@
-sphinx_sMPA
-===========
+sMPA-documentation
+==================
 
 .. toctree::
    :maxdepth: 4

@@ -18,6 +18,9 @@ class PathTopic:
             lsi_serializationAddress(str): absolute path of LSI model file
             dictionary_serialAddress(str): absolute path of dictionary file
             topic_num(str): topic number of LSI
+
+        Returns:
+            None:
         '''
         with open(texts_serialAddress, 'r') as f:
             self.texts = pickle.load(f)
@@ -36,8 +39,6 @@ class PathTopic:
     def transformCorpusLsi2Numpy(self,corpus_index):
         '''
         transform corpus to numpy array format
-
-
 
         Args:
             corpus_index(list): [dictionary.doc2bow(text) for text in texts]
