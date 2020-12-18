@@ -8,9 +8,9 @@ This code provides a series of basic functions to create pajek-style files, such
 
 import networkx as nx
 import copy
-import queue_set
-import Queue
-from xgmml import *
+import sMPA.queue_set
+import queue as Queue
+from sMPA.xgmml import *
 
 class PajekUtil(object):
     def __init__(self):
@@ -54,7 +54,7 @@ class PajekUtil(object):
                 #if line.startswith('\xef\xbb\xbf'):
             	#	line = line[3:]
                 x = line.strip().split(',')
-                x_normalized = [i.strip() for i in x if i is not '']
+                x_normalized = [i.strip() for i in x if i != '']
                 arcs.append([x_normalized[0],x_normalized[1]])
                 line = fp.readline()
         g = self.createNetFromList(arcs)
@@ -99,7 +99,7 @@ class PajekUtil(object):
             line = fp.readline()
             while line:
                   x = line.strip().split(',')
-                  x_normalized = [i for i in x if i is not '']
+                  x_normalized = [i for i in x if i != '']
                   arcs.append([x_normalized[0],x_normalized[1],x_normalized[2]])
                   line = fp.readline()
         nodes_collection = sum([arc[:2] for arc in arcs],[])
@@ -332,7 +332,7 @@ class PajekUtil(object):
                   pos = line.strip().find(',')
                   patentNo = line[:pos]
                   nodes.append(patentNo.strip())
-                  line = fp.readline()
+                  line = fp.readline()   
         for i in range(len(g.nodes())):
             partition.append(0)
             for j in range(len(nodes)):
@@ -537,7 +537,7 @@ class PajekUtil(object):
                     q.put(i)
                     tmp4 = copy.deepcopy(dic.get(tmp)[1])
                     tmp_value = self.internode_sum_distance(g, patentNos, tmp4[0].nodes(), i, sim_matrix)
-                    for tmp3 in tmp4:
+                    for tmp3 in tmp4: 
                         tmp3.add_node(i,ga = g.node[i]['label'])
                         tmp3.add_edge(tmp,i,weight = g[tmp][i]['weight'])
                     dic[i]=[dic.get(tmp)[0]+tmp_value,tmp4]
@@ -657,14 +657,14 @@ class PajekUtil(object):
               line = fp.readline()
               while line.lower().find("*edges")==-1 and line.lower().find("*arcs")==-1:
                   tmp = line.strip().split(' ')
-                  tmp_2 = [i for i in tmp if i is not '']
+                  tmp_2 = [i for i in tmp if i != '']
                   tmp_2[1] = tmp_2[1].replace('\"','')
                   G.add_node(int(tmp_2[0]),label = tmp_2[1])
                   line = fp.readline()
               line = fp.readline()
               while line:
                   tmp = line.strip().split(' ')
-                  tmp_2 = [i for i in tmp if i is not '']
+                  tmp_2 = [i for i in tmp if i != '']
                   G.add_edge(int(tmp_2[0]),int(tmp_2[1]),weight=float(tmp_2[2]))
                   line = fp.readline()
         self.g = G
@@ -685,7 +685,7 @@ class PajekUtil(object):
                 line = fp.readline()
                 while line.lower().find("*arcs") == -1:
                     tmp = line.strip().split(' ')
-                    tmp_2 = [i for i in tmp if i is not '']
+                    tmp_2 = [i for i in tmp if i != '']
                     tmp_2[1] = tmp_2[1].replace('\"', '')
                     G.add_node(int(tmp_2[0]), ga=tmp_2[1])
                     line = fp.readline()
@@ -695,7 +695,7 @@ class PajekUtil(object):
                 while line:
                     if line.lower().find("*arcs") == -1:
                         tmp = line.strip().split(' ')
-                        tmp_2 = [i for i in tmp if i is not '']
+                        tmp_2 = [i for i in tmp if i != '']
                         G.add_edge(int(tmp_2[0]), int(tmp_2[1]), weight=float(tmp_2[2]),type = current_type)
                         line = fp.readline()
                     else:
@@ -703,7 +703,7 @@ class PajekUtil(object):
                         current_type = int(line[line.find(':') + 1:].strip())
                         line = fp.readline()
         return G
-
+        
 
     def getGraphFromPajeknet(self,netAddress):
         '''
@@ -721,7 +721,7 @@ class PajekUtil(object):
               line = fp.readline()
               while line.lower().find("*arcs")==-1:
                   a = line.strip().split(' ')
-                  b = [i for i in a if i is not '']
+                  b = [i for i in a if i != '']
                   #print b
                   b[1] = b[1].replace('\"','')
                   G.add_node(int(b[0]),ga = b[1])
@@ -729,7 +729,7 @@ class PajekUtil(object):
               line = fp.readline()
               while line:
                   a = line.strip().split(' ')
-                  b = [i for i in a if i is not '']
+                  b = [i for i in a if i != '']
                   G.add_edge(int(b[0]),int(b[1]),weight=float(b[2]))
                   line = fp.readline()
         return G
@@ -787,14 +787,14 @@ class PajekUtil(object):
               line = fp.readline()
               while line.lower().find("*edges")==-1:
                   tmp = line.strip().split(' ')
-                  tmp_2 = [i for i in tmp if i is not '']
+                  tmp_2 = [i for i in tmp if i != '']
                   tmp_2[1] = tmp_2[1].replace('\"','')
                   G.add_node(int(tmp_2[0]),label = tmp_2[1])
                   line = fp.readline()
               line = fp.readline()
               while line:
                   tmp = line.strip().split(' ')
-                  tmp_2 = [i for i in tmp if i is not '']
+                  tmp_2 = [i for i in tmp if i != '']
                   G.add_edge(int(tmp_2[0]),int(tmp_2[1]),weight=float(tmp_2[2]))
                   line = fp.readline()
         self.g = G
@@ -815,7 +815,7 @@ class PajekUtil(object):
               line = fp.readline()
               while line:
                   tmp = line.strip().split(' ')
-                  tmp_2 = [i for i in tmp if i is not '']
+                  tmp_2 = [i for i in tmp if i != '']
                   clu.append(tmp_2[0])
                   line = fp.readline()
         return clu
@@ -975,7 +975,6 @@ class PajekUtil(object):
             tmp_max_endNodes = self.getMaxWeightArcFromSrc(graph,src)
             for i in tmp_max_endNodes[1]:
                 result_g.add_node(i,ga=graph.node[i]['label'])
-                print result_g.node[i]['label']
                 result_g.add_edge(src,i,{'weight': graph[src][i]['weight']})
                 queue.put(i)
         

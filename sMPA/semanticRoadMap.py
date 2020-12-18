@@ -7,12 +7,12 @@ This code provides basic functions for semantic main path analysis
 # License: BSD 3 clause
 
 import numpy as np
-import cPickle as pickle
+import pickle
 from scipy.spatial import distance
 from nltk.corpus import stopwords
 from nltk.stem.lancaster import LancasterStemmer
 import logging
-from pajekUtil import *
+from sMPA.pajekUtil import *
 from scipy.sparse import csr_matrix
 class semanticRoadMap:
 

@@ -6,7 +6,7 @@ This code provides a series of basic functions for topic analysis of main path
 # Author: Liang Chen <squirrel_d@126.com>
 # License: BSD 3 clause
 from gensim import models
-from semanticRoadMap import *
+from sMPA.semanticRoadMap import *
 class PathTopic:
     def __init__(self, texts_serialAddress, pns_serialAddress, lsi_serializationAddress, dictionary_serialAddress, topic_num = 10):
         '''
