@@ -8,8 +8,8 @@ Welcome to sMPA's documentation!
 
 .. toctree::
    :maxdepth: 4
+   :caption: Contents:
    
-   sMPA
 
 
 
