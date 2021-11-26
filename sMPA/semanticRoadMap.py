@@ -101,6 +101,16 @@ class semanticRoadMap:
                 break
         return result
 
+    def getMaxWeightPathInGraph(self, sims):
+        l = []
+        sourceNodes = self.getSourceNodes()
+        for i in sourceNodes:
+            tmp = self.getMaxWeightPathBySingleNode(i,sims)
+            l.append(tmp)
+        l.sort(cmp = lambda x,y:cmp(x[1][0],y[1][0]),reverse=True)
+        #result.sort(cmp=lambda x, y: cmp(x[1][0], y[1][0]), reverse=True)
+        return l
+
     def getMaxWeightPathInGraph_returnGraphType_nodeWeight(self, sims):
         '''
         this function uses node weight, which usually is the similarity between query text and docs in corpus, to generate query based global main path
@@ -461,23 +471,34 @@ class semanticRoadMap:
             tmp_id2 = self.pns.index(self.g.node[arc[1]]['label'])
             sim = self.matrix[tmp_id1][tmp_id2]
             self.g[arc[0]][arc[1]]['weight'] = text_weight*sim+topology_weight*self.g[arc[0]][arc[1]]['weight']
-    def create_sim_matrix(self,model,corpus):
-        '''
-        store similarities between nodes in self.g into a matrix
 
-        Args:
-            model(gensim.model): trained gensim.model, i.e., loaded lsi_serialization
-            corpus(list): i.e., [dictionary.doc2bow(text) for text in texts]
+    def create_sim_matrix(self, model, corpus):
+        topics = [model[c] for c in corpus]
+        dense = np.zeros((len(topics), 100), float)
+        for ti, t in enumerate(topics):
+            for tj, v in t:
+                dense[ti, tj] = v
+        pairwise = np.nan_to_num(1.0 - distance.squareform(distance.pdist(dense, 'cosine')))
+        return pairwise
 
-        Returns:
-            np.array: np 2D array
+    def create_sim_matrix_normalized(self, model, corpus, max_value, min_value):
         '''
-        topics =[model[c] for c in corpus]
-        dense = np.zeros((len(topics),100),float)
-        for ti,t in enumerate(topics):
-            for tj,v in t:
-                dense[ti,tj] = v
-        pairwise = np.nan_to_num(1.0-distance.squareform(distance.pdist(dense,'cosine')))
+        use max-min scaling method to normalizing the elements in sim_matrix
+        :param model:
+        :param corpus:
+        :param max_value:
+        :param min_value:
+        :return:
+        '''
+
+        topics = [model[c] for c in corpus]
+        dense = np.zeros((len(topics), 100), float)
+        for ti, t in enumerate(topics):
+            for tj, v in t:
+                dense[ti, tj] = v
+        pairwise = np.nan_to_num(1.0 - distance.squareform(distance.pdist(dense, 'cosine')))
+        pairwise = np.subtract(pairwise, min_value)
+        pairwise = np.divide(pairwise, max_value - min_value)
         return pairwise
 
     def create_sim_sparse_matrix(self):
@@ -534,24 +555,90 @@ class semanticRoadMap:
         retriveResult = self.calculateSimilarityByTerms(query_text)
         maxWeightPath_list = self.getMaxWeightPathInGraph_returnGraphType_nodeWeight_arcWeight(retriveResult,node_Weight,arc_Weight)
         return maxWeightPath_list
-
-    def multi_sources_globalMainPath_textSim_topology_new_sum_method(self,spc_network_file,topology_weight=1.0,text_weight=1.0):
+    def multi_sources_globalMainPath(self):
         '''
-        this function return multiple global main path according to textual similarity and topological attributes, notice newSumMethod refers to internode_sum_distance()
-
-        Args:
-            spc_network_file(str): absolute path of pajek net file, i.e., 'deleteLoops_spc_3603.net'
-            topology_weight(int): 1.0
-            text_weight(int): 1.0
-
-        Returns:
-            list: containing main paths from all source nodes
+        :param spc_network_file: 'deleteLoops_spc_3603.net'
+        :param corpus_file: 'corpus.data',it must contains all texts of the nodes,and can be more than that,but not less
+                          the order of texts should be consistant with that of gas
+        :param topology_weight: 1.0
+        :param text_weight: 1.0
+        :return: list containing main paths from all source nodes
         '''
         result = []
-        self.pu.loadNetworkFromPajeknet(spc_network_file);
         sources = self.pu.getSourceNodes(self.g)
         for i in sources:
-            result.append(self.pu.getmulti_MaxWeightPathBySingleNode_Graph_newSumMethod_textSim_topology\
-                              (i, self.g, self.pns, self.matrix, semantic_weight= text_weight, topology_weight = topology_weight))
+            result.append(self.pu.getmulti_MaxWeightPathBySingleNode_Graph(i,self.g))
         result.sort(cmp=lambda x, y: cmp(x[1][0], y[1][0]), reverse=True)
+        return result
+    def multi_sources_globalMainPath_textSim_topology_new_sum_method(self,spc_network_file,corpus_file,topology_weight,text_weight):
+        '''
+        :param spc_network_file: 'deleteLoops_spc_3603.net'
+        :param corpus_file: 'corpus.data',it must contains all texts of the nodes,and can be more than that,but not less
+                          the order of texts should be consistant with that of gas
+        :param topology_weight: 1.0
+        :param text_weight: 1.0
+        :return: list containing main paths from all source nodes
+        '''
+        result = []
+        self.loadNetworkFromPajeknet(spc_network_file);
+        with open(corpus_file,'r') as f:
+            corpus = pickle.load(f)
+        matrix = self.create_sim_matrix(self.lsi, corpus)
+        sources = self.pu.getSourceNodes(self.g)
+        for i in sources:
+            #print '-------------------------------'+str(i)+'-------------------------------'
+
+            result.append(self.pu.getmulti_MaxWeightPathBySingleNode_Graph_newSumMethod_textSim_topology_return_split_pathweight\
+                              (i, self.g,self.gas,matrix,semantic_weight= text_weight,topology_weight = topology_weight))
+        result.sort(cmp=lambda x, y: cmp(x[1][0][0], y[1][0][0]), reverse=True)
+        return result
+
+    def multi_sources_globalMainPath_textSim_topology_new_sum_method_return_split_pathweight(self,spc_network_file,corpus_file,topology_weight,text_weight):
+        '''
+        return mixed weight/topological weight/semantic weight
+        :param spc_network_file: 'deleteLoops_spc_3603.net'
+        :param corpus_file: 'corpus.data',it must contains all texts of the nodes,and can be more than that,but not less
+                          the order of texts should be consistant with that of gas
+        :param topology_weight: 1.0
+        :param text_weight: 1.0
+        :return: list containing main paths from all source nodes
+        '''
+        result = []
+        self.loadNetworkFromPajeknet(spc_network_file);
+        #self.g = self.normalize_arc_weight_for_biGraph(self.g,top_max,top_min)
+        with open(corpus_file,'r') as f:
+            corpus = pickle.load(f)
+        matrix = self.create_sim_matrix(self.lsi, corpus)
+        sources = self.pu.getSourceNodes(self.g)
+        for i in sources:
+            # result.append(pu.getmulti_MaxWeightPathBySingleNode_Graph(i,roadMap.g,roadMap.gas,sim_matrix))
+            result.append(self.pu.getmulti_MaxWeightPathBySingleNode_Graph_newSumMethod_textSim_topology_return_split_pathweight\
+                              (i, self.g,self.gas,matrix,semantic_weight= text_weight,topology_weight = topology_weight))
+        result.sort(cmp=lambda x, y: cmp(x[1][0][0], y[1][0][0]), reverse=True)
+        return result
+
+
+    def multi_sources_globalMainPath_textSim_topology_new_sum_method_return_split_pathweight_normalized(self,spc_network_file,corpus_file,topology_weight,text_weight\
+                                                                                             ,top_max,top_min,sem_max,sem_min):
+        '''
+        return mixed weight/topological weight/semantic weight
+        :param spc_network_file: 'deleteLoops_spc_3603.net'
+        :param corpus_file: 'corpus.data',it must contains all texts of the nodes,and can be more than that,but not less
+                          the order of texts should be consistant with that of gas
+        :param topology_weight: 1.0
+        :param text_weight: 1.0
+        :return: list containing main paths from all source nodes
+        '''
+        result = []
+        self.loadNetworkFromPajeknet(spc_network_file);
+        self.g = self.normalize_arc_weight_for_biGraph(self.g,top_max,top_min)
+        with open(corpus_file,'r') as f:
+            corpus = pickle.load(f)
+        matrix = self.create_sim_matrix_normalized(self.lsi, corpus,sem_max,sem_min)
+        sources = self.pu.getSourceNodes(self.g)
+        for i in sources:
+            # result.append(pu.getmulti_MaxWeightPathBySingleNode_Graph(i,roadMap.g,roadMap.gas,sim_matrix))
+            result.append(self.pu.getmulti_MaxWeightPathBySingleNode_Graph_newSumMethod_textSim_topology_return_split_pathweight\
+                              (i, self.g,self.gas,matrix,semantic_weight= text_weight,topology_weight = topology_weight))
+        result.sort(cmp=lambda x, y: cmp(x[1][0][0], y[1][0][0]), reverse=True)
         return result

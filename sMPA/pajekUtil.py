@@ -407,7 +407,21 @@ class PajekUtil(object):
                         tmp3.add_edge(tmp,i,weight = g[tmp][i]['weight'])
                         dic[i]=[dic.get(tmp)[0]+g[tmp][i]['weight'],tmp3]
         result = sorted(dic.items(),lambda x,y:cmp(x[1][0],y[1][0]),reverse=True)
-        return result[0]
+        a = result[0]
+        return a
+    #if there exists multiple maxWeight path,draw them all
+    #(3561, [4.200226000000001, [graph1,graph2,......]])
+
+    def getPathWeight(self,path):
+        weight = 0.0
+        for sourceID,endID in path.edges():
+            weight+=path.edge[sourceID][endID]['weight']
+        return weight;
+    def getMixedPathWeight(self,path,top_weight,sem_weight,):
+        weight = 0.0
+        for sourceID,endID in path.edges():
+            weight+=path.edge[sourceID][endID]['weight']
+        return weight;
 
     def getmulti_MaxWeightPathBySingleNode_Graph(self,nodeID,g):
         '''
@@ -445,6 +459,25 @@ class PajekUtil(object):
                             tmp3.add_node(i,ga = g.node[i]['label'])
                             tmp3.add_edge(tmp,i,weight = g[tmp][i]['weight'])
                         dic[i]=[dic.get(tmp)[0]+g[tmp][i]['weight'],tmp4]
+                        # find the paths containing nodeID of i and check if these path need to be updated
+
+                        for key in dic.keys():
+                            for graph_tmp in dic[key][1]:
+                                if i!=key and i in graph_tmp.nodes():
+                                    simple_path =nx.DiGraph()
+                                    current_nodeID = i
+                                    while current_nodeID!=key:
+                                        next_nodeID = graph_tmp.adj[current_nodeID].keys()[0]
+                                        simple_path.add_edge(current_nodeID,next_nodeID,weight = graph_tmp[current_nodeID][next_nodeID]['weight'])
+                                        current_nodeID = next_nodeID
+                                    for graph_tmp_2 in dic[i][1]:
+                                        composed_path = nx.compose(graph_tmp_2,simple_path)
+                                        if self.getPathWeight(composed_path)>dic[key][0]:
+                                            dic[key][1]=[composed_path]
+                                            dic[key][0]=self.getPathWeight(composed_path)
+                                        elif self.getPathWeight(composed_path)==dic[key][0]:
+                                            dic[key][1].append(composed_path)
+
                     elif tmp2[0] == dic.get(tmp)[0]+g[tmp][i]['weight']:
                         tmp4 = copy.deepcopy(dic.get(tmp)[1])
                         for tmp3 in tmp4:
@@ -508,20 +541,108 @@ class PajekUtil(object):
         result = sorted(dic.items(), lambda x, y: cmp(x[1][0], y[1][0]), reverse=True)
         return result[0]
 
-    def getmulti_MaxWeightPathBySingleNode_Graph_newSumMethod(self, nodeID, g, patentNos, sim_matrix):
+
+    def getmulti_MaxWeightPathBySingleNode_Graph_newSumMethod_textSim_topology_return_split_pathweight(self, nodeID, g, gas, sim_matrix, semantic_weight =1.0,topology_weight =1.0):
         '''
-        Search the max weight path from a Graph give source node nodeID, notice that edge weight is measured by textual similarity and stored in sim_matrix, in addition newSumMethod refers to internode_sum_distance()
+        #if there exists multiple maxWeight path,draw them all
+        # (ID of end Node,[mixed weight,top weight,sem weight],[graph1, graph2, ...]
+        #(3561, [[4.200226000000001,1.2,3.0], [graph1,graph2,......]])
+        :param nodeID:
+        :param g:
+        :param gas:
+        :param sim_matrix:
+        :return:
+        '''
+        q = Queue.Queue()
+        graph = nx.DiGraph()
+        q.put(nodeID)
+        dic = dict()
+        graph.add_node(nodeID, ga=g.node[nodeID]['ga'])
+        dic[nodeID] = [[0.0,0.0,0.0], [graph]]
+        while not q.empty():
+            tmp = q.get()
+            successors = g.successors(tmp)
+            for i in successors:
+                if dic.get(i) is None:
+                    q.put(i)
+                    tmp4 = copy.deepcopy(dic.get(tmp)[1])
+                    tmp_value = self.internode_sum_distance(tmp4[0].nodes(), i, sim_matrix)
+                    for index,tmp3 in enumerate(tmp4):
+                        tmp3.add_node(i, ga=g.node[i]['ga'])
+                        tmp3.add_edge(tmp, i, weight=g[tmp][i]['weight'])
+                    mix_weight_tmp = dic.get(tmp)[0][0] + semantic_weight*tmp_value+topology_weight*g[tmp][i]['weight']
+                    top_weight_tmp = dic.get(tmp)[0][1] + g[tmp][i]['weight']
+                    sem_weight_tmp = dic.get(tmp)[0][2] + tmp_value
+                    dic[i] = [[mix_weight_tmp,top_weight_tmp,sem_weight_tmp], tmp4]
+                else:
+                    if i not in list(q.queue):
+                        q.put(i)
+                    tmp2 = dic.get(i)
+                    tmp_value = self.internode_sum_distance(dic.get(tmp)[1][0].nodes(), i, sim_matrix)
+                    if tmp2[0][0] < dic.get(tmp)[0][0] + semantic_weight*tmp_value+topology_weight*g[tmp][i]['weight']:
+                        # need change
+                        tmp4 = copy.deepcopy(dic.get(tmp)[1])
+                        for index,tmp3 in enumerate(tmp4):
+                            tmp3.add_node(i, ga=g.node[i]['ga'])
+                            tmp3.add_edge(tmp, i, weight=g[tmp][i]['weight'])
+                        mix_weight_tmp = dic.get(tmp)[0][0] + semantic_weight * tmp_value + topology_weight * g[tmp][i][
+                            'weight']
+                        top_weight_tmp = dic.get(tmp)[0][1] + g[tmp][i]['weight']
+                        sem_weight_tmp = dic.get(tmp)[0][2] + tmp_value
+                        dic[i] = [[mix_weight_tmp, top_weight_tmp, sem_weight_tmp], tmp4]
+                        # need change
+                        for key in dic.keys():
+                            for graph_tmp in dic[key][1]:
+                                if i!=key and i in graph_tmp.nodes():
+                                    simple_path =nx.DiGraph()
+                                    current_nodeID = i
+                                    while current_nodeID!=key:
+                                        next_nodeID = graph_tmp.adj[current_nodeID].keys()[0]
+                                        simple_path.add_node(current_nodeID, ga=graph_tmp.node[current_nodeID]['ga'])
+                                        simple_path.add_node(next_nodeID,ga = graph_tmp.node[next_nodeID]['ga'])
+                                        simple_path.add_edge(current_nodeID,next_nodeID,weight = graph_tmp[current_nodeID][next_nodeID]['weight'])
+                                        current_nodeID = next_nodeID
+                                    path_list_1 = []
+                                    for index_1,graph_tmp_2 in enumerate(dic[i][1]):
+                                        composed_path = nx.compose(graph_tmp_2,simple_path)
+                                        path_list_1.append(composed_path)
+                                        sem_path_weight = self.internode_sum_distance_on_the_path(composed_path.nodes(),sim_matrix)
+                                        top_path_weight = self.getPathWeight(composed_path)
+                                        mix_path_weight = semantic_weight*sem_path_weight+topology_weight*top_path_weight
+                                        if mix_path_weight>dic[key][0][0]:
+                                            path_list_1.append(composed_path)
+                                            dic[key][0]=[mix_path_weight,top_path_weight,sem_path_weight]
+                                    dic[key][1] = path_list_1
+                    elif tmp2[0][0] == dic.get(tmp)[0][0] + semantic_weight*tmp_value+topology_weight*g[tmp][i]['weight']:
+                        # need change
+                        tmp4 = copy.deepcopy(dic.get(tmp)[1])
+                        for tmp3 in tmp4:
+                            tmp3.add_node(i, ga=g.node[i]['ga'])
+                            tmp3.add_edge(tmp, i, weight=g[tmp][i]['weight'])
+                        tmp2[1].extend(tmp4)
+                        dic[i] = tmp2
 
-        Args:
-            nodeID(int): source node
-            g(DiGraph):
-            patentNos(list): list of patent NO.
-            sim_matrix(np.array): matrix of text similarity
-            semantic_weight(float): weight of textual similarity between nodes
-            topology_weight(float): weight of topological value between nodes, such as SPC,SPNC
+        result = sorted(dic.items(), lambda x, y: cmp(x[1][0][0], y[1][0][0]), reverse=True)
+        max_path_weight = round(result[0][1][0][0],9)
+        return_graph = result[0][1][1]
+        for i in result:
+            if round(i[1][0][0],9)==max_path_weight:
+                return_graph.extend(i[1][1])
+        result[0][1][1] = return_graph;
+        return result[0]
 
-        Returns:
-            list: a list in format like [4.200226000000001, [graph1,graph2,......]]
+
+
+
+    def getmulti_MaxWeightPathBySingleNode_Graph_newSumMethod(self,nodeID,g,gas,sim_matrix):
+        '''
+        #if there exists multiple maxWeight path,draw them all
+        #(3561, [4.200226000000001, [graph1,graph2,......]])
+        :param nodeID:
+        :param g:
+        :param gas:
+        :param sim_matrix:
+        :return:
         '''
         q = Queue.Queue()
         graph = nx.DiGraph()
@@ -578,6 +699,27 @@ class PajekUtil(object):
             sum_value=sum_value+sim
         return sum_value
 
+
+
+    def internode_sum_distance_on_the_path(self,sources,sim_matrix):
+        '''
+        this function compute sum of distance in a dataset "sources" to a given node "target" in graph g
+        and return sum value
+        :param sources:
+        :param sim_matrix:
+        :return:
+        '''
+        sum_value =0.0
+        for i in range(len(sources)):
+            for j in range(i+1,len(sources)):
+                sim = sim_matrix[sources[i]-1,sources[j]-1]
+                sum_value=sum_value+sim
+        return sum_value
+
+
+
+    # return a path,but it need some mends,cos forks are excluded in this function
+    #debugged
     def globalMainPath(self):
         '''
         search a list of max weighted paths given all source nodes
@@ -641,6 +783,29 @@ class PajekUtil(object):
             resultGraph.edge[i[0]][i[1]]['weight'] = g.edge[i[0]][i[1]]['weight']
         return resultGraph
 
+    def createPathStringByRoot(self,graph,root):
+        backstr = ''+graph.node[root]['ga']
+        key = root
+        while graph.succ[key]!={}:
+            if len(graph.succ[key].keys())>1:
+                raise Exception(str(key) +'has '+str(len(graph.succ[key].keys())) + ' successors!')
+            else:
+                backstr += '-->'+graph.node[graph.succ[key].keys()[0]]['ga']
+                key = graph.succ[key].keys()[0]
+        return backstr
+
+
+    def createPathString(self,graph):
+        root = ''
+        backstr = ''
+        for key in graph.pred.keys():
+            if graph.pred[key]=={}:
+                root = key
+                break
+        backstr = self.createPathStringByRoot(graph,root)
+        return backstr;
+
+    #debugged
     def loadNetworkFromPajeknet(self,netAddress):
         '''
         load a pajek net file into self.g as an DiGraph object
@@ -1139,3 +1304,8 @@ class PajekUtil(object):
         for i in resultGraph.edges():
             resultGraph.edge[i[0]][i[1]]['weight'] = g.edge[i[0]][i[1]]['weight']
         return resultGraph
+    def output_partition_from_list(self,partition,output_file):
+        with open(output_file, 'w') as fp:
+            fp.write("*Vertices "+str(len(partition))+"\n")
+            for i in range(len(partition)):
+                fp.write(str(partition[i])+"\n")
